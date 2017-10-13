@@ -1,14 +1,14 @@
 <template>
-    <footer class="footer navbar-fixed-bottom">
-        <nav class="navbar navbar-static-bottom footer">
+	<footer class="footer navbar-fixed-bottom">
+		<nav class="navbar navbar-static-bottom footer">
 		<div class="container">
 			<div class="navbar-header">
 				<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-		      	</button>-->
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			  	</button>-->
 				<a class="navbar-brand mp-logo" href="#home" scroll-to-item scroll-to="#home">
 					POLL APP
 				</a>
@@ -26,22 +26,22 @@
 		<!--</div>-->
 		</div>
 </nav>
-    </footer>
+	</footer>
 </template>
 <script>
 export default {
 
-    data(){
-        return{
+	data(){
+		return{
 
-        }
-    }
+		}
+	}
 }
 </script>
 <style scoped>
 footer{
-    background: #222;
-    padding: 6px;
+	background: #222;
+	padding: 6px;
 }
 
 .mp-logo {
@@ -51,9 +51,9 @@ footer{
 
 .nav.navbar-nav li a {
 	font-family: Lato, Helvetica, sans-serif;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 15px;
-    background: none;
-    border-radius: 30px;
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 15px;
+	background: none;
+	border-radius: 30px;
 }
 </style>
