@@ -50,7 +50,7 @@ export default {
     top: 0;
     z-index: 30;
     width: 100%;
-    height: 775px;
+    height: 650px;
     margin-top: 0rem;
 }
 
@@ -98,8 +98,8 @@ export default {
   padding: 15rem;
   color: #fff;
   text-align: center;
-  height: 715px;
-  margin-bottom: 7%;
+  height: 590px;
+  margin-bottom: 3%;
 }
 
 
