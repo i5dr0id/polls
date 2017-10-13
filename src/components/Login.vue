@@ -5,12 +5,12 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<h3 class="text-center">Sign In to <span style="display: inline-block;"><a class="a-mp"><router-link to="/">POLL APP</router-link></a></span></h3>
-		</div> 
+		</div>
 		<div class="modal-body">
 			<form>
 				<div class="form-group">
-			
-					<input type="text" class="form-control input-lg" placeholder="Email">
+
+					<input type="text" class="form-control input-lg" placeholder="Username">
 
 				</div>
 				<div class="form-group">

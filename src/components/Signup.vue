@@ -9,11 +9,11 @@
 		<div class="modal-body">
 			<form class="dForm" name="registerForm" autocomplete="off" >
 				<div class="form-group">
-					<input type="text" class="form-control input-lg" placeholder="Firstname" name="userFirstName">
+					<input type="text" class="form-control input-lg" placeholder="Fullname" name="userFullName">
 
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control input-lg" placeholder="Lastname" name="userLastName">
+					<input type="text" class="form-control input-lg" placeholder="Username" name="userName">
 
 				</div>
 				<div class="form-group">
@@ -31,22 +31,10 @@
 				<div class="form-group">
 					<input type="number" class="form-control input-lg" placeholder="Phone" name="userPhoneNumber">
 				</div>
-				<div class="form-group">
-					<input type="text" class="form-control input-lg" placeholder="Address" name="userAddress">
-				</div>
-				<div class="form-group row">
-					<div class="form-group col-md-6 col-sm-6 form-sex">
-					<select class="form-control ">
-						<option> Select Gender </option>
-						<option> Male </option>
-						<option> Female </option>
-					</select>
-					</div>
-					<div class="form-group col-md-6 col-sm-6 form-dob">
-					<input type="date" class="form-control input-lg" name="userDOB" placeholder="DOB" required>
-					</div>
-					
-				</div>
+
+
+        <!-- Removed The Gender and Dob of user -->
+				
 
 				<div class="form-group checkbox checkbox-primary">
 					<input type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
@@ -60,7 +48,7 @@
 		<div>
 		<p class="form-footer">Already have an account? <span><a><router-link to="/login">Sign In</router-link></a></span></p>
 		</div>
-	</div> 
+	</div>
 </div>
 
 
@@ -80,7 +68,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+ Add "scoped" attribute to limit CSS to this component only
 <style scoped>
 h3, a{
 	font-family: lato;
