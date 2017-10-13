@@ -97,14 +97,14 @@ textarea {
 }
 
 input[type=text] {
-	border: 0;
+	border: 1px solid #000000;
 	box-sizing: border-box;
 	width: 20%;
 	max-width: 20%;
 	border-radius: 7px;
-	border: none;
+	/* border: none; */
 	padding: 8px 16px;
-	outline: none;
+	/* outline: none; */
 	text-align: center;
 	margin-bottom: 10px;
 	line-height: 36px;
