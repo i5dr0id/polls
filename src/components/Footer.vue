@@ -16,12 +16,12 @@
 		 	<!--<div class="collapse navbar-collapse" id="bs-nav-demo">-->
 				<div class="nav navbar-nav navbar-right">
 					<li><a href="#" class="nav-link">View Live Polls</a></li>
-					<li><a href="#" >Result</a></li>
-					<li><a href="#">features</a></li>
+					<li><a href="#" >Contact</a></li>
+					<li><a href="#">The Team</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>					
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 				</div>
 		<!--</div>-->
 		</div>
