@@ -7,29 +7,29 @@
 			<h3 class="text-center">Sign Up to <span style="display: inline-block;"><a><router-link to="/">POLL APP</router-link></a></span></h3>
 		</div>
 		<div class="modal-body">
-			<form class="dForm" name="registerForm" autocomplete="off" >
+			<form class="dForm" @submit.prevent="signup()" name="registerForm" autocomplete="off" >
 				<div class="form-group">
-					<input type="text" class="form-control input-lg" placeholder="Fullname" name="userFullName">
+					<input v-model="fullname" type="text" class="form-control input-lg" placeholder="Fullname" name="userFullName">
 
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control input-lg" placeholder="Username" name="userName">
+					<input v-model="username" type="text" class="form-control input-lg" placeholder="Username" name="userName">
 
 				</div>
 				<div class="form-group">
-					<input type="email" class="form-control input-lg" placeholder="Email" name="userEmail">
+					<input v-model="email" type="email" class="form-control input-lg" placeholder="Email" name="userEmail">
 				</div>
 
 				<!--password comfirm box-->
 				<div class="form-group">
-					<input type="password" class="form-control input-lg" placeholder="Password" name="userPassword1">
+					<input v-model="password" type="password" class="form-control input-lg" placeholder="Password" name="userPassword1">
 				</div>
 				<div class="form-group">
-					<input type="password" class="form-control input-lg" placeholder="Confirm Password" name="userPassword2">
+					<input v-model="cpassword" type="password" class="form-control input-lg" placeholder="Confirm Password" name="userPassword2">
 				</div>
 
 				<div class="form-group">
-					<input type="number" class="form-control input-lg" placeholder="Phone" name="userPhoneNumber">
+					<input v-model="phone" type="number" class="form-control input-lg" placeholder="Phone" name="userPhoneNumber">
 				</div>
 
 
@@ -37,7 +37,7 @@
 				
 
 				<div class="form-group checkbox checkbox-primary">
-					<input type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
+					<input v-model="checkedgit" type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-block btn-lg btn-sign">REGISTER</button>
