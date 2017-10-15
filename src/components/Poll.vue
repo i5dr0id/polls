@@ -95,12 +95,13 @@
 								</div>
 								<div class="row">
 									<div class="opt-view" v-for="(options, o_key) in finds" v-bind:key="o_key">
-										<input class="optm" type="radio" :id="o_key" id="option" name="option" v-model="options.value">
+										<input class="optm" type="radio" :id="o_key" id="option" name="option" v-bind:value="options.value" v-model="selected">
 										<label for="option"> {{ options.value }} </label> <hr>
 									</div>
 								</div> 
 							</div>
-							<div><button>VOTE</button>
+							<div><button v-on:click="vote">VOTE</button>
+							<h1> Selected: {{ selected }} </h1>
 								<button>RESULT</button>
 							</div>
 						</form>
@@ -124,7 +125,8 @@ export default {
 	  msg: '',
 	  xyz: 'Choice...',
 	  p_options: ["Option 1"],
-	  finds: [{value:""}] 
+	  finds: [{value:""}],
+	  selected: ''
 	};
   },
   methods: {
@@ -136,6 +138,10 @@ export default {
 	    if (e.target.isDirty && e.target.value == '') {
     	this.finds.splice(e.target.id, 1)
     }
+  },
+
+  vote: function () {
+	  alert("You Voted for " + this.selected);
   }
   }
 }
