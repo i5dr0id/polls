@@ -262,7 +262,7 @@ label {
     margin-left: -60%;
 }
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 #preview-text{
 	font-size:26px;
 	padding-top: 8px;
@@ -272,10 +272,10 @@ label {
 
 @font-face {
     font-family: 'FontAwesome';
-    src: url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?v=4.6.3');
-    src: url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?v=4.6.3');
+    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
     font-weight: normal;
-    font-style: normal
+    font-style: normal;
 }
 .fa {
     display: inline-block;
@@ -283,43 +283,43 @@ label {
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
+    -moz-osx-font-smoothing: grayscale;
 }
 .fa-lg {
     font-size: 1.33333333em;
     line-height: .75em;
-    vertical-align: -15%
+    vertical-align: -15%;
 }
 .fa-2x {
-    font-size: 2em
+    font-size: 2em;
 }
 .fa-3x {
-    font-size: 3em
+    font-size: 3em;
 }
 .fa-4x {
-    font-size: 4em
+    font-size: 4em;
 }
 .fa-5x {
-    font-size: 5em
+    font-size: 5em;
 }
 .fa-fw {
     width: 1.28571429em;
-    text-align: center
+    text-align: center;
 }
 .fa-ul {
     padding-left: 0;
     margin-left: 2.14285714em;
-    list-style-type: none
+    list-style-type: none;
 }
 .fa-ul>li {
-    position: relative
+    position: relative;
 }
 .fa-li {
     position: absolute;
     left: -2.14285714em;
     width: 2.14285714em;
     top: .14285714em;
-    text-align: center
+    text-align: center;
 }
 .fa-li.fa-lg {
     left: -1.85714286em
@@ -331,45 +331,45 @@ label {
     -webkit-border-radius: .1em;
     -moz-border-radius: .1em;
     -ms-border-radius: .1em;
-    -o-border-radius: .1em
+    -o-border-radius: .1em;
 }
 .fa-pull-left {
-    float: left
+    float: left;
 }
 .fa-pull-right {
-    float: right
+    float: right;
 }
 .fa.fa-pull-left {
-    margin-right: .3em
+    margin-right: .3em;
 }
 .fa.fa-pull-right {
-    margin-left: .3em
+    margin-left: .3em;
 }
 .pull-right {
-    float: right
+    float: right;
 }
 .pull-left {
-    float: left
+    float: left;
 }
 .fa.pull-left {
-    margin-right: .3em
+    margin-right: .3em;
 }
 .fa.pull-right {
-    margin-left: .3em
+    margin-left: .3em;
 }
 .fa-spin {
     animation: fa-spin 2s infinite linear;
     -webkit-animation: fa-spin 2s infinite linear;
     -moz-animation: fa-spin 2s infinite linear;
     -ms-animation: fa-spin 2s infinite linear;
-    -o-animation: fa-spin 2s infinite linear
+    -o-animation: fa-spin 2s infinite linear;
 }
 .fa-pulse {
     animation: fa-spin 1s infinite steps(8);
     -webkit-animation: fa-spin 1s infinite steps(8);
     -moz-animation: fa-spin 1s infinite steps(8);
     -ms-animation: fa-spin 1s infinite steps(8);
-    -o-animation: fa-spin 1s infinite steps(8)
+    -o-animation: fa-spin 1s infinite steps(8);
 }
 
 /****END OF FONT AWESOME*****/
@@ -381,35 +381,35 @@ label {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
-		-o-box-sizing: border-box
+		-o-box-sizing: border-box;
 	}
 
 .col-img {
 	float: left;
 	width: 50%;
-	text-align: center
+	text-align: center;
 }
 
 .col-img.right {
-	text-align: right
+	text-align: right;
 }
 
 .col-img.left {
-	text-align: left
+	text-align: left;
 }
 
 .col-img img {
 	max-width: 394px;
 	text-align: center;
 	width: 90%;
-	margin: .5em 0 0 0
+	margin: .5em 0 0 0;
 }
 
 .bg {
 	position: relative;
 	background-color: #f5f5f5;
 	background-size: 100% 100%;
-	-webkit-transform: translate3d(0, 0, 0)
+	/* -webkit-transform: translate3d(0, 0, 0); */
 }
 
 .col-3 {
@@ -421,21 +421,21 @@ label {
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 	padding: 0 1em;
-	vertical-align: text-top
+	vertical-align: text-top;
 }
 
 .col-3 i {
 	font-size: 3em;
 	padding: .8em 0 15px;
-	color: #0080f6
+	color: #0080f6;
 }
 
 .col-3 p {
-	text-align: justify
+	text-align: justify;
 }
 
 .grey {
-	color: #3d3d3d
+	color: #3d3d3d;
 }
 
 .guide {
@@ -444,7 +444,7 @@ label {
 	line-height: 1.7;
 	color: #5d6769;
 	max-width: 1100px!important;
-	width: 100%
+	width: 100%;
 }
 
 .guide H3 {
@@ -453,23 +453,23 @@ label {
 	margin-top: 1.5em;
 	font-weight: bold;
 	color: #828282;
-	margin-top: 0
+	margin-top: 0;
 }
 
 .guide .icon H2 {
 	font-size: 1.5em;
 	line-height: 45px;
-	margin: 5px 10px
+	margin: 5px 10px;
 }
 
 .guide .icon ol {
 	display: inline-block;
-	font-size: .9em
+	font-size: .9em;
 }
 
 .guide .wide UL LI,
 .col-a UL LI {
-	text-align: left
+	text-align: left;
 }
 
 .guide .imgborder {
@@ -483,27 +483,27 @@ label {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box
+	-o-box-sizing: border-box;
 }
 .guide H4 {
 	font-weight: 100;
 	font-size: 18px;
 	color: #000;
-	margin-bottom: .25em
+	margin-bottom: .25em;
 }
 
 .guide h1 {
 	margin: 0;
-	font-size: 3em
+	font-size: 3em;
 }
 
 .guide UL LI {
-	text-align: left
+	text-align: left;
 }
 
 .guide UL LI:before {
 	content: "";
-	font-family: FontAwesome
+	font-family: FontAwesome;
 }
 
 .guide .imgborder {
@@ -517,17 +517,17 @@ label {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box
+	-o-box-sizing: border-box;
 }
 
 .guide img {
-	max-width: 100%
+	max-width: 100%;
 }
 
 .guide .icon .bigh2 {
 	font-size: 2.8em;
 	width: 100%;
-	margin: 0
+	margin: 0;
 }
 
 .guide .bigh2 {
@@ -540,21 +540,21 @@ label {
 
 .guide .icon P {
 	font-size: 1em;
-	text-align: justify
+	text-align: justify;
 }
 
 .guide .center {
-	text-align: center
+	text-align: center;
 }
 
 .guide H2 {
 	margin: 0;
 	font-size: 2.5em;
-	color: #424242
+	color: #424242;
 }
 
 .wide .containera {
-	display: inline-block
+	display: inline-block;
 }
 
 .containera{
@@ -565,12 +565,12 @@ label {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box
+	-o-box-sizing: border-box;
 }
 
 .containera {
 	padding: 0 5px 0 5px;
-	display: inline-block
+	display: inline-block;
 }
 
 .wide {
@@ -593,7 +593,7 @@ label {
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
-	width: 100%
+	width: 100%;
 }
 
 .wide UL LI:before{
@@ -602,20 +602,20 @@ label {
 	margin-left: -1.2em;
 	display: inline-block;
 	color: #3b89ff;
-	font-family: FontAwesome
+	font-family: FontAwesome;
 }
 
 .wide UL LI{
-	text-align: left
+	text-align: left;
 }
 
 .containera.centera {
-	text-align: center
+	text-align: center;
 }
 
 .bigpad2 {
 	padding: 5.5em 1em;
-	display: inline-block
+	display: inline-block;
 }
 
 @media only screen and (min-width:481px)and (max-width:768px) {
@@ -623,65 +623,65 @@ label {
 	.container {
 		padding: 10px;
 		max-width: 768px;
-		font-size: 15px
+		font-size: 15px;
 	}
 
 }
 @media only screen and (min-width:321px)and (max-width:480px) {
-	.containera {}
+	/* .containera {}
 	.containera.guide,
-	.wide .containera {}
+	.wide .containera {} */
 	.large H1 {
-		font-size: 2.5em
+		font-size: 2.5em;
 	}
 	.col-1 {
-		width: 100%
+		width: 100%;
 	}
 	.col-2 {
 		width: 100%;
-		margin-bottom: 20px
+		margin-bottom: 20px;
 	}
-	.icon {}
-	.icon P {}
+	/* .icon {}
+	.icon P {} */
 	.featureimg {
-		margin: 0 25px 20px
+		margin: 0 25px 20px;
 	}
 	.whitespace {
-		height: 35px
+		height: 35px;
 	}
 	H1 BR {
-		display: none
+		display: none;
 	}
 }
 
 @media only screen and (max-width:479px) {
-	#content .container {}
+	/* #content .container {}
 	#content .container.guide,
-	#content .wide .containera {}
+	#content .wide .containera {} */
 	.col-1 {
-		width: 100%
+		width: 100%;
 	}
 	.col-2 {
 		width: 100%;
-		margin-bottom: 0
+		margin-bottom: 0;
 	}
 	.col-img {
-		width: 100%
+		width: 100%;
 	}
 	.featureimg {
-		margin: 0 0 20px 0
+		margin: 0 0 20px 0;
 	}
 	.whitespace {
-		height: 30px
+		height: 30px;
 	}
 	.icon H2 {
 		width: 250px;
 		margin: 5px 0 0 15px;
-		font-size: 16px
+		font-size: 16px;
 	}
 	.icon IMG {
 		float: left;
-		width: 40px
+		width: 40px;
 	}
 	H1 BR {
 		display: none
@@ -689,144 +689,144 @@ label {
 	#footer a {
 		padding: 0 .4em;
 		color: #848484;
-		font-size: 8pt
+		font-size: 8pt;
 	}
 	.poll-results-rpt #report-bad {
-		margin-top: -.8em
+		margin-top: -.8em;
 	}
 }
 
 @media only screen and (max-width:767px) {
 	.updates-col-1 {
 		width: 100%;
-		font-size: .8em
+		font-size: .8em;
 	}
 	.updates-col-2 {
-		width: 100%
+		width: 100%;
 	}
 	.f-poll {
 		position: absolute;
-		margin-top: 25px
+		margin-top: 25px;
 	}
 	.f-poll A {
-		max-width: 100%
+		max-width: 100%;
 	}
 	.qp-preview {
-		margin-bottom: 30px
+		margin-bottom: 30px;
 	}
 	.features {
-		font-size: .8em
+		font-size: .8em;
 	}
 	.features div {
-		min-height: 80px
+		min-height: 80px;
 	}
 	.guide .bigh2 {
-		font-size: 2em
+		font-size: 2em;
 	}
 	.guide .icon .bigh2 {
-		font-size: 2em
+		font-size: 2em;
 	}
 	.guide H3 {
-		font-size: 1.3em
+		font-size: 1.3em;
 	}
 	.update {
-		padding: .5em 0
+		padding: .5em 0;
 	}
 	.update-details {
-		padding: .5em 1em 0 1em
+		padding: .5em 1em 0 1em;
 	}
 	.update-img {
-		padding: 0 1em
+		padding: 0 1em;
 	}
 	.quiz-updates .update-details H3 {
 		font-size: 1.2em;
 		display: table-cell;
-		vertical-align: middle
+		vertical-align: middle;
 	}
 	.quiz-updates .update-details A {
 		height: 28px;
-		display: table
+		display: table;
 	}
 	.quiz-updates .update-details .update-meta A {
-		height: initial
+		height: initial;
 	}
 	.guide h2 {
-		font-size: 1.8em
+		font-size: 1.8em;
 	}
 	#content .container.padbig.guide {
-		padding: 1.8em 1em
+		padding: 1.8em 1em;
 	}
 	.guide {
-		font-size: 12px
+		font-size: 12px;
 	}
 	.large H3 {
-		font-size: 1.3em
+		font-size: 1.3em;
 	}
 	.features div i {
 		min-height: 46px;
 		line-height: 46px
 	}
 	.col-3 {
-		width: 100%
+		width: 100%;
 	}
 	.col-3 P {
 		float: right;
-		width: 76%
+		width: 76%;
 	}
 	.full P {
-		width: 100%
+		width: 100%;
 	}
 	.full H3 {
 		width: 100%;
-		text-align: left
+		text-align: left;
 	}
 	.col-3 .title-3 {
 		width: 20%;
-		float: left
+		float: left;
 	}
 	.col-3 H3 {
 		font-family: 'Roboto Condensed', sans-serif;
 		font-weight: 300;
-		font-size: 1.2em
+		font-size: 1.2em;
 	}
 	.col-3 i {
 		padding: .5em;
-		font-size: 2em
+		font-size: 2em;
 	}
 	.regi {
-		padding: 2.5em 1.5em
+		padding: 2.5em 1.5em;
 	}
 	.regi H3 {
-		font-size: 2em
+		font-size: 2em;
 	}
 }
 
 @media only screen and (min-width:1100px) {
 	.bigpad2 {
-		padding: 5.5em 0
+		padding: 5.5em 0;
 	}
 }
 
 @media only screen and (min-width:481px)and (max-width:768px) {
 	BODY {
-		font-size: 11pt
+		font-size: 11pt;
 	}
 	.poll H2,
 	H2 {
-		font-size: 1.7em
+		font-size: 1.7em;
 	}
 	INPUT {
 		height: 45px;
-		margin-bottom: 7px
+		margin-bottom: 7px;
 	}
 	.poll .container {
 		padding: 0 10px 0;
-		text-align: center
+		text-align: center;
 	}
 	.container {
 		padding: 10px;
 		max-width: 768px;
-		font-size: 15px
+		font-size: 15px;
 	}
 	.ul-form {
 		float: left;
@@ -836,25 +836,25 @@ label {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
-		-o-box-sizing: border-box
+		-o-box-sizing: border-box;
 	}
 	.fbconnect {
 		padding: 0;
-		margin-bottom: 8px
+		margin-bottom: 8px;
 	}
 	.ul-connect {
 		float: left;
 		width: 100%;
-		text-align: center
+		text-align: center;
 	}
 	.sup-form {
-		padding: 5px
+		padding: 5px;
 	}
 	.sup-connect {
-		display: none
+		display: none;
 	}
 	.icon H2 {
-		width: 270px
+		width: 270px;
 	}
 	.col-1 {
 		width: 50%;
@@ -862,7 +862,7 @@ label {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
-		-o-box-sizing: border-box
+		-o-box-sizing: border-box;
 	}
 	.col-2 {
 		width: 50%;
@@ -871,67 +871,68 @@ label {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
-		-o-box-sizing: border-box
+		-o-box-sizing: border-box;
 	}
-	.icon {}
+	/* .icon {} */
 	.icon P {
-		margin-bottom: 20px
+		margin-bottom: 20px;
 	}
 	.featureimg {
-		margin: 0 0 40px
+		margin: 0 0 40px;
 	}
 	.whitespace {
-		height: 35px
+		height: 35px;
 	}
 	.large H1 {
-		font-size: 2.5em
+		font-size: 2.5em;
 	}
 	.bigpad2 {
 		padding: 5% 1em 5%;
-		display: inline-block
+		display: inline-block;
 	}
 }
 
 @media only screen and (max-width:768px) {
 	.large {
-		padding: 2.5em 1em
+		padding: 2.5em 1em;
 	}
 	.nomobile {
-		display: none!important
+		display: none!important;
 	}
 	.col-img img {
-		width: 70%
+		width: 70%;
 	}
 	.bigpad2 {
-		padding: 9% 1em
+		padding: 9% 1em;
 	}
 	.col-1,
 	.col-2 {
 		width: 100%;
-		padding-left: 0
+		padding-left: 0;
 	}
 	.col-img {
-		width: 100%
+		width: 100%;
 	}
 	.col-img.left,
 	.col-img.right {
-		text-align: center
+		text-align: center;
 	}
 	.col-img img {
 		width: 50%;
-		margin: 1em
+		margin: 1em;
 	}
 	.col-img.left img {
-		margin-top: 0
+		margin-top: 0;
 	}
-=======
+/* ======= */
 .addopt {
 	margin-top: 15px;
 }
 
 .addopt  > a {
 	color: #ffffff;
->>>>>>> add poll option bind
+/* >>>>>>> add poll option bind */
 }
 
+}
 </style>
