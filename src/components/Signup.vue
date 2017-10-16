@@ -37,7 +37,7 @@
 				
 
 				<div class="form-group checkbox checkbox-primary">
-					<input v-model="checkedgit" type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
+					<input v-model="checkedit" type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-block btn-lg btn-sign">REGISTER</button>

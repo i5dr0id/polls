@@ -74,7 +74,7 @@
 												<input  @keyup="addFind" :id="index" v-model="find.value" autocompelete="off" type="text" :placeholder="xyz">
 											</div>
 										</div>
-										<div><a v-on:click="addFind">Add Options</a></div>
+										<div class="addopt"><a v-on:click="addFind">Add Options</a></div>
 									</div>									
 								</div>	
 							</div>
@@ -262,6 +262,7 @@ label {
     margin-left: -60%;
 }
 
+<<<<<<< HEAD
 #preview-text{
 	font-size:26px;
 	padding-top: 8px;
@@ -923,6 +924,14 @@ label {
 	.col-img.left img {
 		margin-top: 0
 	}
+=======
+.addopt {
+	margin-top: 15px;
+}
+
+.addopt  > a {
+	color: #ffffff;
+>>>>>>> add poll option bind
 }
 
 </style>
