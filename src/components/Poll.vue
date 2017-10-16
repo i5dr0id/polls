@@ -95,6 +95,7 @@
 									<div class="form-group">
 									<div class="opt-view row" v-for="(options, o_key) in finds" v-bind:key="o_key">
 										<input class="optm col-sm-4" type="radio" :id="o_key" name="option" v-bind:value="options.value" v-model="selected">
+										<!-- <input class="optm col-sm-4" type="radio" :id="o_key" name="option" v-bind:value="options.value"> -->
 										<label class="col-sm-8" for="option"> {{ options.value }} </label> <hr>
 									</div>
 								</div>
@@ -200,6 +201,9 @@ input[type="text"] {
 	border: 1px solid #a6c9e2;
 }
 
+
+
+
 form {
 	text-align: center;
 }
@@ -253,7 +257,7 @@ form>div>div>h4 {
 }
 
 hr {
-	width: 70%
+	width: 100%
 }
 
 button[type="submit"] {
@@ -268,21 +272,30 @@ h2 {
 
 label {
 	font-size: 150%;
+	color: #ffffff;
 }
 
 .optm {
 	width: 30%;
+	margin-right: -50px;
+	padding-right: 0px;
+	margin-top: 10px;
+	min-height: 20px;
 }
 
 label {
-	margin-left: -60px;
+	margin-left: -10px;
+	margin-bottom: 10px;
 }
 
 .opt-view {
-width: 100%;
+	width: 100%;
 /* padding-left: 2px; */
 /* padding-right:2px ; */
-margin-left: 0px; 
+	margin-left: 0px; 
+	text-align: center;
+	align-content: center;
+
 }
 
 .btn-v {
