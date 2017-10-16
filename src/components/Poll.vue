@@ -1,82 +1,80 @@
 <template>
-<div class="root-element">
+	<div class="root-element">
 
-  <div class='wide'>
-    <div class="containera guide centera bigpad2">
-    <h2 class='bigh2 grey'>How to Publish a Poll in 3 Steps</h2>
+		<div class='wide'>
+			<div class="containera guide centera bigpad2">
+				<h2 class='bigh2 grey'>How to Publish a Poll in 3 Steps</h2>
 
-        <div class="col-3">
-         <div class='title-3'>
-            <i class='fa fa-edit'></i>
-        
-            <h3>1. Add Questions</h3>
-         </div>
-            <p>Type your question and then add answers. From this point you can simply hit create poll and you're ready to go. The rest of the steps are optional. No account or signup required.</p>
-        </div>
-        <div class="col-3">
-         <div class='title-3'>
-            <i class='fa fa-send'></i>
-            <h3>2. Set Options</h3>
-         </div>
-            <p>On the Themes tab select one of our default themes or create your own. On the settings tab set options like allowing multiple answers, allowing voters to enter their own answers and much more</p>
-        </div>
-        <div class="col-3">
-         <div class='title-3'>
-            <i class='fa fa-pie-chart'></i>
-            <h3>3. Share & Report</h3>
-         </div>
-            <p>Click Share and copy your poll Vote url to share with voters. You can also hit Embed to place the poll directly on your website or blog.</p>
-        </div>
-        
-    </div>
-</div>
+				<div class="col-3">
+					<div class='title-3'>
+						<i class='fa fa-edit'></i>
 
+						<h3>1. Add Questions</h3>
+					</div>
+					<p>Type your question and then add answers. From this point you can simply hit create poll and you're ready to go. The rest of the steps are optional. No account or signup required.</p>
+				</div>
+				<div class="col-3">
+					<div class='title-3'>
+						<i class='fa fa-send'></i>
+						<h3>2. Set Options</h3>
+					</div>
+					<p>On the Themes tab select one of our default themes or create your own. On the settings tab set options like allowing multiple answers, allowing voters to enter their own answers and much more</p>
+				</div>
+				<div class="col-3">
+					<div class='title-3'>
+						<i class='fa fa-pie-chart'></i>
+						<h3>3. Share & Report</h3>
+					</div>
+					<p>Click Share and copy your poll Vote url to share with voters. You can also hit Embed to place the poll directly on your website or blog.</p>
+				</div>
 
-<div class="wide bg">
-    <div class="containera guide bigpad2">
+			</div>
+		</div>
 
-        <div class="row">
-        	<div class="col-md-6">
-       <img class='guideimg imgborder' alt='Generate leads with your quiz' src='../assets/poll.png' >
-        	</div>
-        	<div class="col-md-6" style="padding:10px;">
-       <h4 class='bigh2 grey' style="font-weight:lighter;text-align: center; word-spacing: 6px;">Live Results In Clear Concise Graphs</h4>
-            <h3></h3>
-            <p style="padding-top:10px">
-                Live graphs show your poll results immediately in easy to understand and read, bar graph format. But final results don't always reveal the whole picture. The longitudinal graph provides a visual representation of poll votes over time.
-            </p>
-        	</div>
-        </div>
-       
-     
-        
-    </div>
-</div>
+		<div class="wide bg">
+			<div class="containera guide bigpad2">
 
+				<div class="row">
+					<div class="col-md-6">
+						<img class='guideimg imgborder' alt='Generate leads with your quiz' src='../assets/poll.png'>
+					</div>
+					<div class="col-md-6" style="padding:10px;">
+						<h4 class='bigh2 grey' style="font-weight:lighter;text-align: center; word-spacing: 6px;">Live Results In Clear Concise Graphs</h4>
+						<h3></h3>
+						<p style="padding-top:10px">
+							Live graphs show your poll results immediately in easy to understand and read, bar graph format. But final results don't always reveal the whole picture. The longitudinal graph provides a visual representation of poll votes over time.
+						</p>
+					</div>
+				</div>
 
-	<div class="container poll-container">
-		<div class="row grid-1 container">
+			</div>
+		</div>
+
+		<div class="container poll-container">
+			<div class="row grid-1 container">
 
 				<div class="col-sm-6">
 					<div class="make-poll">
 						<form>
-						
+
 							<div class="question-div">
 								<div class="form-group">
 									<h3>Enter Question Here:</h3>
-									<textarea v-model="msg"></textarea>
+									<textarea v-model="msg" placeholder="Enter your question here"></textarea>
 								</div>
 								<div class="form-group">
-									<h4>Enter choices Here:</h4>
+									<h4>Enter Choices Here:</h4>
 									<div v-show="p_options">
 										<div v-for="(find, index) in finds" v-bind:key="index">
 											<div class="poll-options">
-												<input  @keyup="addFind" :id="index" v-model="find.value" autocompelete="off" type="text" :placeholder="xyz">
+												<input @keyup="txtAddInput" :id="index" v-model="find.value" autocompelete="off" type="text" :placeholder="xyz">
 											</div>
 										</div>
-										<div class="addopt"><a @click="addFind">Add Options</a></div>
-									</div>									
-								</div>	
+										<!-- <div class="addopt">
+											<a v-on:click="btnAddInput">Add Options</a>
+										</div> -->
+									</div>
+								</div>
 							</div>
 							<div class="">
 								<button type="submit" class="btn btn-default">Create Poll</button>
@@ -95,61 +93,63 @@
 								</div>
 								<div class="row">
 									<div class="opt-view" v-for="(options, o_key) in finds" v-bind:key="o_key">
-										<input class="optm" type="radio" :id="o_key" id="option" name="option" v-bind:value="options.value" v-model="selected">
+										<input class="optm" type="radio" :id="o_key" name="option" v-bind:value="options.value" v-model="selected">
 										<label for="option"> {{ options.value }} </label> <hr>
 									</div>
-								</div> 
+								</div>
 							</div>
-							<div><button v-on:click="vote">VOTE</button>
-							<h1> Selected: {{ selected }} </h1>
-								<button>RESULT</button>
+							<div>
+								<button v-on:click="vote">VOTE</button>
+								<!-- <h1> Selected: {{ selected }} </h1> -->
+								<button >RESULT</button>
 							</div>
 						</form>
 					</div>
-
 				</div>
-				
-			
+			</div>
 		</div>
 	</div>
-</div>
 </template>
 
 <script>
 
 
 export default {
-  name: 'poll',
-  data () {
-	return {
-	  msg: '',
-	  xyz: 'Choice...',
-	  p_options: ["Option 1"],
-	  finds: [{value:""}],
-	  selected: ''
-	};
-  },
-  methods: {
-	addFind: function (e) {
-    if(e.target.id == this.finds.length - 1){
-		e.target.isDirty = true;
-      this.finds.push({ text: '' });
-    }
-	    if (e.target.isDirty && e.target.value == '') {
-    	this.finds.splice(e.target.id, 1)
-    }
-  },
+	name: 'poll',
+	data() {
+		return {
+			msg: '',
+			xyz: 'Choice...',
+			p_options: ["Option 1"],
+			finds: [{ value: '' }],
+			aaa: null,
+			selected: ''
+		};
+	},
+	methods: {
+		txtAddInput: function(e) {
+			if (e.target.id == this.finds.length - 1) {
+				e.target.isDirty = true;
+				this.finds.push({ text: '' });
+			}
+			if (e.target.isDirty && e.target.value == '') {
+				this.finds.splice(e.target.id, 1)
+			}
+		},
 
-  vote: function () {
-	  alert("You Voted for " + this.selected);
-  }
-  }
+		btnAddInput: function(){
+			this.finds.push({ value: '' });
+		},
+
+		vote: function() {
+			alert("You Voted for " + this.selected);
+		}
+	}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 #hello {
 	border: 1px solid red;
 	width: 100%;
@@ -157,99 +157,111 @@ export default {
 }
 
 .poll-container {
-margin-bottom: 10%;
+	margin-bottom: 10%;
 }
 
 .grid-1 {
-	/* background-color: #D3D3D3; */
-/*	margin-top: 65%;*/
-	margin-left: -9.2%;
-    /* border: 1px solid blue; */
-	margin-top: 5%;
+	/* background-color: red;  */
+	/* margin-left: -9.2%; */
+	margin-top: 4%;
+	    width: 100%;
 }
-.make-poll {
-	border: 1px solid #000000;
-}
+
 .question-div {
 	/* text-align: center; */
 	padding-left: 4%;
 	padding-right: 4%;
 }
+
 textarea {
-    height: 150px;
-    width: 100%;
-    border: 1px solid #a6c9e2;
-    border-radius: 8px;
-    color: #000000;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 30px;
-    outline: none;
-    padding: 24px 16px;
-    resize: none;
-    text-align: left;
+	font-family: 'Roboto Condensed', sans-serif;
+	height: 80px;
+	width: 100%;
+	border: 1px solid #a6c9e2;
+	/* border-radius: 8px; */
+	color: #000000;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 30px;
+	outline: none;
+	padding: 24px 16px;
+	/* resize: none; */
+	text-align: left;
 	font-family: arial, verdana;
 	padding: 5%;
 }
 
 input {
 	margin: 0px;
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #a6c9e2;
 }
 
 form {
 	text-align: center;
 }
 
-form > div > div > h3,
-form > div > div > h4 {
+form>div>div>h3,
+form>div>div>h4 {
 	text-align: center;
-    padding-top: 19px;
+	padding-top: 19px;
 }
 
 
 .preview {
 	height: 150px;
-    width: 90%;
-    border: none;
-    border-radius: 8px;
-    color: #4e4868;
-    font-size: 26px;
-    font-weight: 500;
-    line-height: 30px;
-    outline: none;
-    padding: 24px 16px;
-    resize: none;
-    text-align: center;
+	width: 90%;
+	border: none;
+	border-radius: 8px;
+	color: #4e4868;
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 30px;
+	outline: none;
+	padding: 24px 16px;
+	resize: none;
+	text-align: center;
 	margin-left: 24px;
 	background-color: #ffffff;
 }
 
 .make-poll {
-    margin-right: 3px;
-    width: 142%;
-    margin-left: 1%;
-    background-color: #4da5f5;
-    border: none;
-    margin-top: -4%;
-    height: 550px;
+	/* background-color: #4da5f5; */
+	border: none;
+	width: 100%;
+	border: 1px solid #000000;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 .preview-poll {
-	/* background-color: #8E33F7; */
-	    background-color: #00B394;
-    border: none;
-    margin-left: 44%;
-    width: 90%;
-    margin-top: -0.2%;
-	height: 550px;
+	/* background-color: #00B394; */
+	border: none;
+	width: 100%;
+	margin-top: -0.2%;
+}
+
+.view-poll {
+	width: 75%;
+	float: right;
+	margin-top: 3.8%;
+	background-color: #00B394;
+	/* align-content: center;
+	text-align: center; */
+}
+
+hr {
+	width: 70%
+}
+
+button[type="submit"] {
+	margin-bottom: 5%;
+	margin-top:5%;
 }
 
 h2 {
-	    margin-top: 0;
+	margin-top: 0;
 }
 
 
@@ -259,130 +271,162 @@ label {
 
 .optm {
 	width: 5%;
-    margin-left: -60%;
+	margin-left: -60%;
 }
 
 
-#preview-text{
-	font-size:26px;
+#preview-text {
+	font-size: 26px;
 	padding-top: 8px;
 }
+
+
+
+
+
 
 /****FONT AWESOME*****/
 
 @font-face {
-    font-family: 'FontAwesome';
-    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?v=4.6.3');
-    src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'FontAwesome';
+	src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?v=4.6.3');
+	src: url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'), url('http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
+
 .fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
+
 .fa-lg {
-    font-size: 1.33333333em;
-    line-height: .75em;
-    vertical-align: -15%;
+	font-size: 1.33333333em;
+	line-height: .75em;
+	vertical-align: -15%;
 }
+
 .fa-2x {
-    font-size: 2em;
+	font-size: 2em;
 }
+
 .fa-3x {
-    font-size: 3em;
+	font-size: 3em;
 }
+
 .fa-4x {
-    font-size: 4em;
+	font-size: 4em;
 }
+
 .fa-5x {
-    font-size: 5em;
+	font-size: 5em;
 }
+
 .fa-fw {
-    width: 1.28571429em;
-    text-align: center;
+	width: 1.28571429em;
+	text-align: center;
 }
+
 .fa-ul {
-    padding-left: 0;
-    margin-left: 2.14285714em;
-    list-style-type: none;
+	padding-left: 0;
+	margin-left: 2.14285714em;
+	list-style-type: none;
 }
+
 .fa-ul>li {
-    position: relative;
+	position: relative;
 }
+
 .fa-li {
-    position: absolute;
-    left: -2.14285714em;
-    width: 2.14285714em;
-    top: .14285714em;
-    text-align: center;
+	position: absolute;
+	left: -2.14285714em;
+	width: 2.14285714em;
+	top: .14285714em;
+	text-align: center;
 }
+
 .fa-li.fa-lg {
-    left: -1.85714286em
+	left: -1.85714286em
 }
+
 .fa-border {
-    padding: .2em .25em .15em;
-    border: solid .08em #eee;
-    border-radius: .1em;
-    -webkit-border-radius: .1em;
-    -moz-border-radius: .1em;
-    -ms-border-radius: .1em;
-    -o-border-radius: .1em;
+	padding: .2em .25em .15em;
+	border: solid .08em #eee;
+	border-radius: .1em;
+	-webkit-border-radius: .1em;
+	-moz-border-radius: .1em;
+	-ms-border-radius: .1em;
+	-o-border-radius: .1em;
 }
+
 .fa-pull-left {
-    float: left;
+	float: left;
 }
+
 .fa-pull-right {
-    float: right;
+	float: right;
 }
+
 .fa.fa-pull-left {
-    margin-right: .3em;
+	margin-right: .3em;
 }
+
 .fa.fa-pull-right {
-    margin-left: .3em;
+	margin-left: .3em;
 }
+
 .pull-right {
-    float: right;
+	float: right;
 }
+
 .pull-left {
-    float: left;
+	float: left;
 }
+
 .fa.pull-left {
-    margin-right: .3em;
+	margin-right: .3em;
 }
+
 .fa.pull-right {
-    margin-left: .3em;
+	margin-left: .3em;
 }
+
 .fa-spin {
-    animation: fa-spin 2s infinite linear;
-    -webkit-animation: fa-spin 2s infinite linear;
-    -moz-animation: fa-spin 2s infinite linear;
-    -ms-animation: fa-spin 2s infinite linear;
-    -o-animation: fa-spin 2s infinite linear;
+	animation: fa-spin 2s infinite linear;
+	-webkit-animation: fa-spin 2s infinite linear;
+	-moz-animation: fa-spin 2s infinite linear;
+	-ms-animation: fa-spin 2s infinite linear;
+	-o-animation: fa-spin 2s infinite linear;
 }
+
 .fa-pulse {
-    animation: fa-spin 1s infinite steps(8);
-    -webkit-animation: fa-spin 1s infinite steps(8);
-    -moz-animation: fa-spin 1s infinite steps(8);
-    -ms-animation: fa-spin 1s infinite steps(8);
-    -o-animation: fa-spin 1s infinite steps(8);
+	animation: fa-spin 1s infinite steps(8);
+	-webkit-animation: fa-spin 1s infinite steps(8);
+	-moz-animation: fa-spin 1s infinite steps(8);
+	-ms-animation: fa-spin 1s infinite steps(8);
+	-o-animation: fa-spin 1s infinite steps(8);
 }
+
+
+
+
+
 
 /****END OF FONT AWESOME*****/
 
 .col-2 {
-		width: 50%;
-		padding-left: 20px;
-		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		-o-box-sizing: border-box;
-	}
+	width: 50%;
+	padding-left: 20px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
 
 .col-img {
 	float: left;
@@ -485,6 +529,7 @@ label {
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
 }
+
 .guide H4 {
 	font-weight: 100;
 	font-size: 18px;
@@ -534,7 +579,6 @@ label {
 	font-size: 2.3em;
 	width: 100%;
 	margin: 0;
-
 }
 
 
@@ -557,7 +601,7 @@ label {
 	display: inline-block;
 }
 
-.containera{
+.containera {
 	max-width: 1100px;
 	margin: 0 auto;
 	text-align: left;
@@ -580,7 +624,7 @@ label {
 	display: inline-block;
 }
 
-.wide UL LI{
+.wide UL LI {
 	padding-left: 1.2em;
 	padding-right: 20px;
 	display: inline-block;
@@ -596,7 +640,7 @@ label {
 	width: 100%;
 }
 
-.wide UL LI:before{
+.wide UL LI:before {
 	content: "";
 	width: 1em;
 	margin-left: -1.2em;
@@ -605,7 +649,7 @@ label {
 	font-family: FontAwesome;
 }
 
-.wide UL LI{
+.wide UL LI {
 	text-align: left;
 }
 
@@ -625,8 +669,8 @@ label {
 		max-width: 768px;
 		font-size: 15px;
 	}
-
 }
+
 @media only screen and (min-width:321px)and (max-width:480px) {
 	/* .containera {}
 	.containera.guide,
@@ -925,14 +969,12 @@ label {
 		margin-top: 0;
 	}
 
-.addopt {
-	margin-top: 15px;
-}
+	.addopt {
+		margin-top: 15px;
+	}
 
-.addopt  > a {
-	color: #ffffff;
-
-}
-
+	.addopt>a {
+		color: #ffffff;
+	}
 }
 </style>
