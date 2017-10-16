@@ -77,7 +77,7 @@
 								</div>
 							</div>
 							<div class="">
-								<button type="submit" class="btn btn-default">Create Poll</button>
+								<button type="submit" class="btn btn-primary">Create Poll</button>
 							</div>
 						</form>
 					</div>
@@ -91,17 +91,18 @@
 									<h2 id="preview-text">Preview</h2>
 									<h1 class="preview" readonly>{{ msg }}</h1>
 								</div>
-								<div class="row">
-									<div class="opt-view" v-for="(options, o_key) in finds" v-bind:key="o_key">
-										<input class="optm" type="radio" :id="o_key" name="option" v-bind:value="options.value" v-model="selected">
-										<label for="option"> {{ options.value }} </label> <hr>
+								<!-- <div class="row"> -->
+									<div class="form-group">
+									<div class="opt-view row" v-for="(options, o_key) in finds" v-bind:key="o_key">
+										<input class="optm col-sm-4" type="radio" :id="o_key" name="option" v-bind:value="options.value" v-model="selected">
+										<label class="col-sm-8" for="option"> {{ options.value }} </label> <hr>
 									</div>
 								</div>
 							</div>
 							<div>
-								<button v-on:click="vote">VOTE</button>
+								<button class="btn-v btn btn-success" v-on:click="vote">VOTE</button>
 								<!-- <h1> Selected: {{ selected }} </h1> -->
-								<button >RESULT</button>
+								<button class="btn-r btn btn-info">RESULT</button>
 							</div>
 						</form>
 					</div>
@@ -191,7 +192,7 @@ textarea {
 	padding: 5%;
 }
 
-input {
+input[type="text"] {
 	margin: 0px;
 	width: 100%;
 	padding: 10px;
@@ -211,7 +212,7 @@ form>div>div>h4 {
 
 
 .preview {
-	height: 150px;
+	/* height: 150px; */
 	width: 90%;
 	border: none;
 	border-radius: 8px;
@@ -270,8 +271,26 @@ label {
 }
 
 .optm {
-	width: 5%;
-	margin-left: -60%;
+	width: 30%;
+}
+
+label {
+	margin-left: -60px;
+}
+
+.opt-view {
+width: 100%;
+/* padding-left: 2px; */
+/* padding-right:2px ; */
+margin-left: 0px; 
+}
+
+.btn-v {
+	margin-right: 3px;
+}
+
+.btn-r {
+	margin-left: 3px;
 }
 
 
