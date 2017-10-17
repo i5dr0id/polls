@@ -15,11 +15,11 @@
 					<div class="nav navbar-nav navbar-right">
 						<li><a href="#home" class="nav-link"><router-link to="/">Home</router-link></a></li>
 						<li><a href="#livepolls">Live-Polls</a></li>
-						<li><a href="#result">Result</a></li>
+						<li><a href="#"><router-link to="/result">Result</router-link></a></li>
 						<li><a href="#">features</a></li>
 						<li><a href="#about">About</a></li>
 						<li><a href="#"><router-link to="/login">Login</router-link></a></li>
-						<li><a href="register" class="btn btn-primary header-btn" id="btn-tran"><router-link to="/register">Sign up</router-link></a></li>
+						<li><a href="#" class="btn btn-primary header-btn" id="btn-tran"><router-link to="/register">Sign up</router-link></a></li>
 					</div>
 				</div>
 			</div>
@@ -114,7 +114,12 @@ button {
 
 #btn-tran {
 	background-color: transparent !important;
-	width: 190px;
+	width: 140px;
+	/* padding-bottom: 900%; */
+}
+
+.navbar-right {
+	padding-top: 10px;
 }
 
 .nav.navbar-nav li a {
@@ -124,14 +129,14 @@ button {
 	border-radius: 30px;
 }
 
-#btn-tran {
+/* #btn-tran {
 	background-color: transparent !important;
-	width: 190px;
-}
+	width: 160px;
+} */
 
 .header-btn {
 	padding: 5px 10px !important;
-	margin-top: 15px !important;
+	margin-top: 10px !important;
 	border: 2px solid #fff;
 	border-color: #FFFFFF !important;
 	margin: auto;

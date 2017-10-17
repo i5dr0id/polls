@@ -56,7 +56,7 @@
 				<div class="col-sm-6">
 					<div class="make-poll">
 						<form>
-
+							<!-- QUESTIONS -->
 							<div class="question-div">
 								<div class="form-group">
 									<h3>Enter Question Here:</h3>
@@ -64,16 +64,18 @@
 								</div>
 								<div class="form-group">
 									<h4>Enter Choices Here:</h4>
-									<div v-show="p_options">
+									<!-- <input @keyup="txtAddInput" id="0" v-model="finds[0].value" autocompelete="off" type="text" :placeholder="xyz"> -->
+									<!-- <div v-show="showS"> -->
 										<div v-for="(find, index) in finds" v-bind:key="index">
 											<div class="poll-options">
+												<!-- <pre>{{index}}</pre> -->
 												<input @keyup="txtAddInput" :id="index" v-model="find.value" autocompelete="off" type="text" :placeholder="xyz">
 											</div>
 										</div>
 										<!-- <div class="addopt">
 											<a v-on:click="btnAddInput">Add Options</a>
 										</div> -->
-									</div>
+									<!-- </div> -->
 								</div>
 							</div>
 							<div class="">
@@ -93,10 +95,11 @@
 								</div>
 								<!-- <div class="row"> -->
 									<div class="form-group">
-									<div class="opt-view row" v-for="(options, o_key) in finds" v-bind:key="o_key">
-										<input class="optm col-sm-4" type="radio" :id="o_key" name="option" v-bind:value="options.value" v-model="selected">
+										<!-- <pre>{{finds}}</pre> -->
+									<div class="opt-view row" v-for="(find, o_key) in finds" v-show="find.value != ''" v-bind:key="o_key">
+										<input type="radio" class="optm col-sm-4" :id="o_key" name="nameRadio" :value="find.value">
 										<!-- <input class="optm col-sm-4" type="radio" :id="o_key" name="option" v-bind:value="options.value"> -->
-										<label class="col-sm-8" for="option"> {{ options.value }} </label> <hr>
+										<label class="col-sm-8" for="option"> {{ find.value }} </label> <hr>
 									</div>
 								</div>
 							</div>
@@ -123,16 +126,20 @@ export default {
 			msg: '',
 			xyz: 'Choice...',
 			p_options: ["Option 1"],
-			finds: [{ value: '' }],
+			finds: [{value: ''}],
 			aaa: null,
-			selected: ''
+			selected: '',
+			// showS: false
 		};
 	},
 	methods: {
 		txtAddInput: function(e) {
-			if (e.target.id == this.finds.length - 1) {
+			if (this.finds.value != '') {
+				// this.showS = true;
+				if (e.target.id == this.finds.length - 1) {
 				e.target.isDirty = true;
-				this.finds.push({ text: '' });
+				this.finds.push({ value: '' });
+			}
 			}
 			if (e.target.isDirty && e.target.value == '') {
 				this.finds.splice(e.target.id, 1)
@@ -284,7 +291,7 @@ label {
 }
 
 label {
-	margin-left: -10px;
+	/* margin-left: -10px; */
 	margin-bottom: 10px;
 }
 
