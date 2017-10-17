@@ -152,4 +152,9 @@ input[type="text"], input[type="password"] {
 	text-align: center;
 	margin-top: 2rem;
 }
+
+button {
+	background-color: rgba(0, 0, 115, .6);
+	color: #ffffff;
+}
 </style>

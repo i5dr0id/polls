@@ -13,12 +13,12 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-nav-demo">
 					<div class="nav navbar-nav navbar-right">
-						<li><a href="#home" class="nav-link"><router-link to="/">Home</router-link></a></li>
+						<li><a class="nav-link"><router-link to="/">Home</router-link></a></li>
 						<li><a href="#livepolls">Live-Polls</a></li>
-						<li><a href="#"><router-link to="/result">Result</router-link></a></li>
+						<li><a><router-link to="/result">Result</router-link></a></li>
 						<li><a href="#">features</a></li>
 						<li><a href="#about">About</a></li>
-						<li><a href="#"><router-link to="/login">Login</router-link></a></li>
+						<li><a ><router-link to="/login">Login</router-link></a></li>
 						<li><a href="#" class="btn btn-primary header-btn" id="btn-tran"><router-link to="/register">Sign up</router-link></a></li>
 					</div>
 				</div>
