@@ -8,7 +8,7 @@
 						<h2> POLLAPP CREATES ELECTION FOR ORGRANIZATIONS</h2>
 						<h4>PollApp is an application that seamlessly allow user to create poll(opinion),which allow other user to vote or comment on.which is use to make decision and determine opinions.</h4>
 					</div>
-					<div > <a class="btn home-btn">CREATE POLL</a>
+					<div > <a class="btn home-btn" href="#create-poll">CREATE POLL</a>
 					</div>
 				</div>
 			</div>
