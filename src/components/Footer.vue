@@ -40,7 +40,7 @@ export default {
 </script>
 <style scoped>
 footer{
-	background: #222;
+	background: #0084b4;
 	padding: 6px;
 }
 
@@ -55,5 +55,9 @@ footer{
 	font-size: 15px;
 	background: none;
 	border-radius: 30px;
+}
+
+.navbar{
+	margin-bottom: 10px;
 }
 </style>

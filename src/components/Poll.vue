@@ -50,7 +50,7 @@
 			</div>
 		</div>
 
-		<div class="container poll-container">
+		<div class="container poll-container" id="create-poll">
 			<div class="row grid-1 container">
 
 				<div class="col-sm-6">
@@ -58,7 +58,7 @@
 						<form>
 							<!-- QUESTIONS -->
 							<div class="question-div">
-								<div class="form-group">
+								<div class="form-group" >
 									<h3>Enter Question Here:</h3>
 									<textarea v-model="msg" placeholder="Enter your question here"></textarea>
 								</div>
@@ -103,7 +103,7 @@
 									</div>
 								</div>
 							</div>
-							<div>
+							<div style="margin-top: 40px;"> 
 								<button class="btn-v btn btn-success" v-on:click="vote">VOTE</button>
 								<!-- <h1> Selected: {{ selected }} </h1> -->
 								<button class="btn-r btn btn-info">RESULT</button>
@@ -257,10 +257,8 @@ form>div>div>h4 {
 .view-poll {
 	width: 75%;
 	float: right;
-	margin-top: 3.8%;
 	background-color: #00B394;
-	/* align-content: center;
-	text-align: center; */
+	padding-bottom: 40px;
 }
 
 hr {
@@ -316,7 +314,7 @@ label {
 
 #preview-text {
 	font-size: 26px;
-	padding-top: 8px;
+	padding-top: 20px;
 }
 
 
