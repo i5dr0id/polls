@@ -46,11 +46,11 @@
 		<!-- Removed The Gender and Dob of user -->
 				
 
-				<div class="form-group checkbox checkbox-primary">
-					<!-- <input v-model="register.checkedit" type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div> -->
-				</div>
+				<!-- <div class="form-group checkbox checkbox-primary">
+					<input v-model="register.checkedit" type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
+				</div> -->
 				<div class="form-group">
-					<button class="btn btn-block btn-lg btn-sign" @click="btnRegister">REGISTER</button>
+					<button class="btn btn-block btn-lg btn-sign" @click.prevent="btnRegister">REGISTER</button>
 				</div>
 			</form>
 		</div>
@@ -69,37 +69,45 @@
 // import axios from 'axios';
 export default {
   name: 'HelloWorld',
-  api: 'https://poolap.herokuapp.com/users/' ,
+//   api: 'https://poolap.herokuapp.com/users/' ,
 
   data () {
 	return {
 		msg: 'Welcome to Your Vue.js App',
 		register:{
-			fullname: 'israel israel',
-			username: 'israel',
-			email: 'israel@israel.com',
-			password: 'israel',
+			fullname: '',
+			username: '',
+			email: '',
+			password: '',
 			// cpassword: '',
-			phone: '1234567890'
+			phone: ''
 			// checkedit: ''
 		}
 	}
   },
   methods: {
 	  btnRegister() {
-		  this.axios.post('https://poolap.herokuapp.com/users/', this.register )
-			.then(response => {
-			  console.log(response => {
-				  var token = response.data.user.api_token
-			  });
-
-			})
-			.catch(function (error) {
-	 		  alert(error);
-		  });
+		  console.log('AFTER: ' + JSON.stringify(this.register));
+		this.axios.post('https://poolap.herokuapp.com/users/', {
+		username: this.register.username,
+		fullname: this.register.fullname,
+		email:	this.register.email,
+		password: this.register.password,
+		phone: this.register.phone
+	}).then((response) => {
+		let token = response.data.token;
+		// console.log(token);
+  		console.log(response.data);
+		  localStorage.setItem('token',token);
+})
+.catch(function (error) {
+	console.log(error);
+});
 	  }
   },
   mounted() {
+	  
+	  console.log('BEFORE: ' + JSON.stringify(this.register));
 	 //this.api = 'https://poolap.herokuapp.com/users/';
 // 	this.axios.post('https://poolap.herokuapp.com/users/', {
 // 		username:'test2',

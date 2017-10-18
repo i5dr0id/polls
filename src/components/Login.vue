@@ -10,17 +10,17 @@
 			<form>
 				<div class="form-group">
 
-					<input type="text" class="form-control input-lg" placeholder="Username">
+					<input v-model="login.username" type="text" class="form-control input-lg" placeholder="Username">
 
 				</div>
 				<div class="form-group">
-					<input type="password" class="form-control input-lg" placeholder="Password">
+					<input v-model="login.password" type="password" class="form-control input-lg" placeholder="Password">
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<input type="checkbox"> Remember me
-				</div>
+				</div> -->
 				<div class="form-group">
-					<button class="btn btn-block btn-lg btn-log"> Log in</button>
+					<button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin"> Log in</button>
 				</div>
 				<div>
 					<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
@@ -44,9 +44,36 @@ export default {
   name: 'HelloWorld',
   data () {
 	return {
-	  msg: 'Welcome to Your Vue.js App'
+	  msg: 'Welcome to Your Vue.js App',
+	  login: {
+		  username: '',
+		  password: ''
+	  }
 	}
+  },
+    methods: {
+	  btnLogin() {
+		  console.log('AFTER: ' + JSON.stringify(this.login));
+		this.axios.post('https://poolap.herokuapp.com/users/authenticate', {
+		username: this.login.username,
+		password: this.login.password,
+	}).then((response) => {
+		let token = response.data.token;
+		console.log(token);
+		console.log(response.data);
+		localStorage.setItem('token',token);
+
+		this.$router.push('/');
+})
+.catch(function (error) {
+	console.log(error);
+});
+	  }
+  },
+  mounted() {
+	  console.log('BEFORE: ' + JSON.stringify(this.login));
   }
+
 }
 </script>
 

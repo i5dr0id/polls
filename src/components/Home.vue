@@ -33,6 +33,18 @@ export default {
 	return {
 	  msg: 'Welcome to Your Vue.js App'
 	}
+  },
+  mounted () {
+
+		let token = localStorage.getItem('token');
+		this.axios.get('https://poolap.herokuapp.com/users/', {
+			headers: {
+				'x-access-token': token
+			}
+		})
+		.then((response) => {
+		console.log(response.data);
+});
   }
 }
 </script>
