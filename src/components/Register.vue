@@ -43,7 +43,7 @@
 				</div>
 
 
-        <!-- Removed The Gender and Dob of user -->
+		<!-- Removed The Gender and Dob of user -->
 				
 
 				<div class="form-group checkbox checkbox-primary">
@@ -75,21 +75,27 @@ export default {
 	return {
 		msg: 'Welcome to Your Vue.js App',
 		register:{
-			fullname: '',
-			username: '',
-			email: '',
-			password: '',
+			fullname: 'israel israel',
+			username: 'israel',
+			email: 'israel@israel.com',
+			password: 'israel',
 			// cpassword: '',
-			phone: '',
+			phone: '1234567890'
 			// checkedit: ''
 		}
 	}
   },
   methods: {
 	  btnRegister() {
-		  this.axios.post('https://poolap.herokuapp.com/users/',this.register )
-		  .then(response => {
-			  console.log(response);
+		  this.axios.post('https://poolap.herokuapp.com/users/', this.register )
+			.then(response => {
+			  console.log(response => {
+				  var token = response.data.user.api_token
+			  });
+
+			})
+			.catch(function (error) {
+	 		  alert(error);
 		  });
 	  }
   },
