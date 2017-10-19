@@ -8,6 +8,7 @@ import Result from '@/components/Result'
 Vue.use(Router)
 
 export default new Router({
+	mode: 'history',
   routes: [
     {
       path: '/',
@@ -29,6 +30,5 @@ export default new Router({
 		name: 'result',
 		component: Result
 	}
-  ],
-  mode: 'history'
+  ]
 })
