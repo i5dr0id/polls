@@ -6,20 +6,32 @@
 		<div class="modal-header">
 			<h3 class="text-center">Sign In to <span style="display: inline-block;"><a class="a-mp"><router-link to="/">POLL APP</router-link></a></span></h3>
 		</div>
+		<div class="text-center text-danger">
+			{{ msg }}
+		</div>
 		<div class="modal-body">
 			<form>
-				<div class="form-group">
-
-					<input v-model="login.username" type="text" class="form-control input-lg" placeholder="Username">
-
+				<div class="form-group" :class="{'has-error': errors.has('username') }">
+					<label class="control-label" for="username">Username: </label>
+					<!-- <p :class="{ 'control': true }"> -->
+					<input v-model="login.username" name="username" v-validate="'required|alpha_num|min:4'" type="text" class="form-control input-lg" placeholder="Username">
+					<!-- <span v-show="fields.username && fields.username.valid">I'm valid</span> -->
+					<!-- <p class="text-danger" v-show="errors.has('username')">{{ errors.first('username') }}</p> -->
+					<!-- </p> -->
+				</div>
+				<div class="form-group" :class="{'has-error': errors.has('password') }">
+					<label class="control-label" for="userPassword">Password: </label>
+					<!-- <p :class="{ 'control': true }"> -->
+					<input v-model="login.password" name="password" v-validate="'required'" type="password" class="form-control input-lg"  placeholder="Password">
+					<!-- <p class="text-danger" v-show="errors.has('password')">{{ errors.first('password') }}</p> -->
+					<!-- </p> -->
+				</div>
+				<div class="form-group" :class="{'has-error': errors.has('terms') }">
+					<label class="control-label" for="userPassword"><input name="terms" type="checkbox"> Remember me </label>
+					 <!-- Remember me -->
 				</div>
 				<div class="form-group">
-					<input v-model="login.password" type="password" class="form-control input-lg" placeholder="Password">
-				</div>
-				<!-- <div class="form-group">
-					<input type="checkbox"> Remember me
-				</div> -->
-				<div class="form-group">
+					<!-- <button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin" :disabled="!((fields.username && fields.username.valid) && (fields.password && fields.password.valid))"> Log in</button> -->
 					<button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin"> Log in</button>
 				</div>
 				<div>
@@ -42,9 +54,11 @@
 
 export default {
   name: 'HelloWorld',
+//   validated: false,
   data () {
 	return {
-	  msg: 'Welcome to Your Vue.js App',
+	  msg: '',
+	//   validated: true,
 	  login: {
 		  username: '',
 		  password: ''
@@ -59,11 +73,23 @@ export default {
 		password: this.login.password,
 	}).then((response) => {
 		let token = response.data.token;
-		console.log(token);
-		console.log(response.data);
-		localStorage.setItem('token',token);
+		// console.log(token);
+		// console.log(response.data);
+		if (token) {
+			localStorage.setItem('token',token);
 
-		this.$router.push('/');
+			this.login.username = '';
+			this.login.password = '';
+
+			this.$router.push('/');
+		}
+
+		else {
+
+			this.msg = "wrong username or password";
+			this.login.username = '';
+			this.login.password = '';
+		}
 })
 .catch(function (error) {
 	console.log(error);
@@ -72,6 +98,10 @@ export default {
   },
   mounted() {
 	  console.log('BEFORE: ' + JSON.stringify(this.login));
+
+	// console.log(this.fields.username.valid);
+	
+	console.log(this.fields.username);
   }
 
 }

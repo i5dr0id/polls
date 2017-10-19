@@ -47,6 +47,11 @@ export default {
 });
   }
 }
+
+//logout
+// To delete this from localStorage:
+
+// localStorage.removeItem('YourItem')
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
