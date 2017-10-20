@@ -8,7 +8,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 
-Vue.use(VeeValidate);;
+Vue.use(VeeValidate);
 Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false

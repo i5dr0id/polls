@@ -8,6 +8,7 @@
 		</div>
 		<div class="text-center text-danger">
 			{{ msg }}
+			<i  v-show="loading" class="fa fa-spinner fa-spin"></i>
 		</div>
 		<div class="modal-body">
 			<form>
@@ -58,6 +59,7 @@ export default {
   data () {
 	return {
 	  msg: '',
+	  loading: false,
 	//   validated: true,
 	  login: {
 		  username: '',
@@ -68,6 +70,7 @@ export default {
     methods: {
 	  btnLogin() {
 		  console.log('AFTER: ' + JSON.stringify(this.login));
+		  this.loading = true;
 		this.axios.post('https://poolap.herokuapp.com/users/authenticate', {
 		username: this.login.username,
 		password: this.login.password,
@@ -81,6 +84,7 @@ export default {
 			this.login.username = '';
 			this.login.password = '';
 
+		 this.loading = false;
 			this.$router.push('/');
 		}
 
