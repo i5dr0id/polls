@@ -71,7 +71,7 @@
 
 <script>
 // Imports
-import Poll from "../components/Poll.vue";
+import Poll from "../pages/Poll.vue";
 
 export default {
   components: {

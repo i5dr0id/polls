@@ -60,31 +60,36 @@ export default {
 	return {
 	  msg: '',
 	  loading: false,
-	//   validated: true,
+	  api: 'https://poolap.herokuapp.com/users/authenticate',
 	  login: {
 		  username: '',
 		  password: ''
 	  }
 	}
   },
-    methods: {
+	methods: {
 	  btnLogin() {
-		  console.log('AFTER: ' + JSON.stringify(this.login));
-		  this.loading = true;
-		this.axios.post('https://poolap.herokuapp.com/users/authenticate', {
+		console.log('AFTER: ' + JSON.stringify(this.login));
+		this.loading = true;
+		this.axios.post(this.api, {
 		username: this.login.username,
 		password: this.login.password,
 	}).then((response) => {
 		let token = response.data.token;
 		// console.log(token);
-		// console.log(response.data);
+		console.log(response.data);
 		if (token) {
-			localStorage.setItem('token',token);
+			localStorage.setItem('token',token);			
+			Event.$emit('login', response.data.user);
 
 			this.login.username = '';
 			this.login.password = '';
+			console.log(response.data.user.username);
+			// get token from localstorage
+			//  send token to server
+			// get username or let header get user from response header
 
-		 this.loading = false;
+		 	this.loading = false;
 			this.$router.push('/');
 		}
 
@@ -105,7 +110,7 @@ export default {
 
 	// console.log(this.fields.username.valid);
 	
-	console.log(this.fields.username);
+	// console.log(this.fields.username);
   }
 
 }

@@ -11,25 +11,51 @@
 					</button>
 					<router-link class="navbar-brand mp-logo" to="/">POLL APP</router-link>
 				</div>
-				<div class="collapse navbar-collapse" id="bs-nav-demo">
+
+				<!-- Logged User Div -->
+				<div class="collapse navbar-collapse" id="bs-nav-demo" v-if='loggedIn'>
 					<div class="nav navbar-nav navbar-right">
 						<li><a class="nav-link"><router-link to="/">Home</router-link></a></li>
-						<li><a href="#livepolls">Live-Polls</a></li>
+						<!-- get user id for the active polls and go there -->
+						<li><a href="#livepolls"><router-link :to="{name:'active', params:{id:active.id}}">Live-Polls</router-link></a></li>
 						<li><a><router-link to="/result">Result</router-link></a></li>
 						<li><a href="#">features</a></li>
 						<li><a href="#about">About</a></li>
 
-						<div class="login-state-in" v-if="user">
+						<!-- <div class="login-state-in" > -->
+							<li class="login-user"><a href="#"><router-link to="/logout">Logout</router-link></a></li>
+							<li><a href="#" class="btn btn-primary header-btn" id="btn-tran-login"><router-link class="userText" to="/profile:id">{{user}}</router-link></a></li>
+						<!-- </div> -->
+
+						<!-- <div class="login-state-out" > -->
+							<!-- <li class="login-user-out"><a href="#"	><router-link to="/login">Login</router-link></a></li> -->
+							<!-- <li><a href="#" class="btn btn-primary header-btn-out" id="btn-tran-out"><router-link to="/register">Sign up</router-link></a></li> -->
+						<!-- </div> -->
+					</div>
+				</div>
+
+				<!-- Visitors Div -->
+				<div class="collapse navbar-collapse" id="bs-nav-demo" v-else>
+					<div class="nav navbar-nav navbar-right">
+						<li><a class="nav-link"><router-link to="/">Home</router-link></a></li>
+						<!-- <li><a href="#livepolls">Live-Polls</a></li>
+						<li><a><router-link to="/result">Result</router-link></a></li> -->
+						<li><a href="#">features</a></li>
+						<li><a href="#about">About</a></li>
+
+						<!-- <div class="login-state-in">
 							<li class="login-user"><a href="#" v-on:click="logout()"> Logout </a></li>
 							<li><a href="#" class="btn btn-primary header-btn" id="btn-tran-login"><router-link class="userText" to="/register">{{user}}</router-link></a></li>
-						</div>
+						</div> -->
 
-						<div class="login-state-out" v-else>
-							<li class="login-user-out"><a href="#"	><router-link to="/login">Login</router-link></a></li>
+						<div class="login-state-out">
+							<li class="login-user-out"><a href="#"><router-link to="/login">Login</router-link></a></li>
 							<li><a href="#" class="btn btn-primary header-btn-out" id="btn-tran-out"><router-link to="/register">Sign up</router-link></a></li>
 						</div>
 					</div>
 				</div>
+
+				
 			</div>
 		</nav>
 	</header>
@@ -41,37 +67,48 @@ export default {
   data() {
     return {
 		user: '',
-	  loginType: false
-	//   username: 'i5dr0id'
+		active: {
+			id: 7	
+		},
+		api: 'https://poolap.herokuapp.com/users/authenticate',
+	  loggedIn: false
     };
   },
 
   methods: {
 	  logout() {
-		//   let token = localStorage.getItem("token");
 		  localStorage.removeItem("token");
-		//   this.$router.push('/');
-		// window.location.href;
 	  }
   },
   mounted() {
-	//   this.loading = true;
+
+	  Event.$on('login', ($event)=>{
+		  this.loggedIn = true;
+		  this.user = $event.username;
+	  });
+
+	  Event.$on('loggedout', ()=> {
+		  this.loggedIn = false;
+	  });
+
     let token = localStorage.getItem("token");
     if (typeof token !== "undefined") {
 		// <i  v-show="loading" class="fa fa-spinner fa-spin"></i>
       this.axios
-        .get("https://poolap.herokuapp.com/users/", {
+        .get(this.api, {
           headers: {
             "x-access-token": token
           }
         })
         .then(response => {
-          this.user = response.data.users[0].username;
-		  console.log(response.data.users[0].username);
+        //   this.user = response.data.users[0].username;
+		  console.log(response.data);
 		//   this.loading = false;
+		// this.loggedIn = true;
         });
 	}
-	// this.loading = false;
+	console.log();
+	this.loading = false;
   }
 };
 </script>
