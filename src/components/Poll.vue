@@ -51,7 +51,7 @@
 		</div>
 
 		<div class="container poll-container" id="create-poll">
-			<div class="row grid-1 container">
+			<div class="row">
 
 				<div class="col-sm-6">
 					<div class="make-poll">
@@ -103,8 +103,8 @@
 									</div>
 								</div>
 							</div>
-							<div style="margin-top: 40px;"> 
-								<button class="btn-v btn btn-success" v-on:click="vote">VOTE</button>
+							<div style="margin-top: 40px;">
+								<button class="btn-v btn btn-info" v-on:click="vote">VOTE</button>
 								<!-- <h1> Selected: {{ selected }} </h1> -->
 								<button class="btn-r btn btn-info">RESULT</button>
 							</div>
@@ -268,6 +268,7 @@ hr {
 button[type="submit"] {
 	margin-bottom: 5%;
 	margin-top:5%;
+
 }
 
 h2 {
@@ -297,7 +298,7 @@ label {
 	width: 100%;
 /* padding-left: 2px; */
 /* padding-right:2px ; */
-	margin-left: 0px; 
+	margin-left: 0px;
 	text-align: center;
 	align-content: center;
 
@@ -706,9 +707,10 @@ label {
 		max-width: 768px;
 		font-size: 15px;
 	}
+
 }
 
-@media only screen and (min-width:321px)and (max-width:480px) {
+@media only screen and (min-width:320px)and (max-width:480px) {
 	/* .containera {}
 	.containera.guide,
 	.wide .containera {} */
@@ -733,6 +735,29 @@ label {
 	H1 BR {
 		display: none;
 	}
+.view-poll {
+		padding-bottom: 40px;
+		padding-top: 40px;
+		width: 100%;
+		margin-top: 20px;
+}
+
+.col-md-6 {
+	text-align: center;
+}
+
+.make-poll{
+	margin-top: 20px;
+}
+
+.preview{
+	overflow-wrap: break-word;
+
+}
+.opt-view.row{
+	overflow-wrap:break-word;
+}
+
 }
 
 @media only screen and (max-width:479px) {
