@@ -6,40 +6,54 @@
 		<div class="modal-header">
 			<h3 class="text-center">Sign Up to <span style="display: inline-block;"><a><router-link to="/">POLL APP</router-link></a></span></h3>
 		</div>
+		<div class="text-center text-danger">
+			{{ msg }}
+		</div>
 		<div class="modal-body">
 			<!-- <form class="dForm" @submit.prevent="signup()" name="registerForm" autocomplete="off" > -->
 			<form class="dForm"  name="registerForm" autocomplete="off" >
-				<div class="form-group">
+				<div class="form-group" :class="{'has-error': errors.has('fullname') }">
 					<label class="control-label" for="userFullName">Full Name: </label>
-					<input v-model="register.fullname" type="text" class="form-control input-lg" placeholder="Firstname  Lastname" name="userFullName">
-
+					<p :class="{ 'control': true }">
+					<input v-model="register.fullname" name="fullname" v-validate="'required|alpha_spaces'" type="text" class="form-control input-lg" placeholder="Firstname  Lastname">
+					<p class="text-danger" v-show="errors.has('fullname')">{{ errors.first('fullname') }}</p>
+					</p>
 				</div>
-				<div class="form-group">
-					<label class="control-label" for="userName">User Name: </label>
-					<input v-model="register.username" type="text" class="form-control input-lg" placeholder="Username" name="userName">
-
+				<div class="form-group" :class="{'has-error': errors.has('username') }">
+					<label class="control-label" for="username">User Name: </label>
+					<p :class="{ 'control': true }">
+					<input v-model="register.username" name="username" v-validate="'required|alpha_num|min:4'" type="text" class="form-control input-lg" placeholder="Username">
+					 <!-- <span v-show="fields.username && fields.username.valid">I'm valid</span> -->
+					<p class="text-danger" v-show="errors.has('username')">{{ errors.first('username') }}</p>
+					</p>
 				</div>
 				<div class="form-group" :class="{'has-error': errors.has('email') }">
-					<label class="control-label" for="userEmail">Email: </label>
+					<label class="control-label" for="email">Email: </label>
 					<p :class="{ 'control': true }">
-					<input v-model="register.email" v-validate="'required|email'"  type="text" class="form-control input-lg" placeholder="Email" name="userEmail">
+					<input v-model="register.email" v-validate="'required|email'"  type="text" class="form-control input-lg" placeholder="Email" name="email">
 					<p class="text-danger" v-show="errors.has('email')">{{ errors.first('email') }}</p>
 					</p>
 				</div>
 
 				<!--password comfirm box-->
-				<div class="form-group">
-					<label class="control-label" for="userPassword1">Password: </label>
-					<input v-model="register.password" type="password" class="form-control input-lg" placeholder="Password" name="userPassword1">
+				<div class="form-group" :class="{'has-error': errors.has('password') }">
+					<label class="control-label" for="password">Password: </label>
+					<p :class="{ 'control': true }">
+					<input v-model="register.password" name="password" v-validate="'required|alpha_num|min:6'" type="password" class="form-control input-lg" placeholder="Password">
+					<p class="text-danger" v-show="errors.has('password')">{{ errors.first('password') }}</p>
+					</p>
 				</div>
 				<!-- <div class="form-group">
 					<label class="control-label" for="userPassword2">Confirm Password: </label>
 					<input v-model="register.cpassword" type="password" class="form-control input-lg" placeholder="Confirm Password" name="userPassword2">
 				</div> -->
 
-				<div class="form-group">
-					<label class="control-label" for="userPhoneNumber">Phone Number: </label>
-					<input v-model="register.phone" type="number" class="form-control input-lg" placeholder="Phone" name="userPhoneNumber">
+				<div class="form-group" :class="{'has-error': errors.has('number') }">
+					<label class="control-label" for="number">Phone Number: </label>
+					<p :class="{ 'control': true }">
+					<input v-model="register.phone" name="number" v-validate="{ rules: { regex: /^([0]{1})([7-9]{1})([0|1]{1})([\d]{1})([\d]{7,8})$/g} }" type="tel" class="form-control input-lg" placeholder="Phone number" >
+					<p class="text-danger" v-show="errors.has('number')">{{ errors.first('number') }}</p>
+					</p>
 				</div>
 
 
@@ -50,7 +64,8 @@
 					<input v-model="register.checkedit" type="checkbox" required> <div class="term"> I accept <span><a href="#"> Terms and Conditions </a></span></div>
 				</div> -->
 				<div class="form-group">
-					<button class="btn btn-block btn-lg btn-sign" @click.prevent="btnRegister">REGISTER</button>
+					<!-- <button class="btn btn-block btn-lg btn-sign" @click.prevent="btnRegister" :disabled="!((fields.username && fields.username.valid) && (fields.password && fields.password.valid) && (fields.fullname && fields.fullname.valid) && (fields.email && fields.email.valid) && (fields.number && fields.number.valid))" >REGISTER</button> -->
+					<button class="btn btn-block btn-lg btn-sign" @click.prevent="btnRegister" :disabled="!((fields.username && fields.username.valid) && (fields.password && fields.password.valid) && (fields.fullname && fields.fullname.valid) && (fields.email && fields.email.valid))" >REGISTER</button>
 				</div>
 			</form>
 		</div>
@@ -69,11 +84,9 @@
 // import axios from 'axios';
 export default {
   name: 'HelloWorld',
-//   api: 'https://poolap.herokuapp.com/users/' ,
-
   data () {
 	return {
-		msg: 'Welcome to Your Vue.js App',
+		msg: '',
 		register:{
 			fullname: '',
 			username: '',
@@ -97,8 +110,29 @@ export default {
 	}).then((response) => {
 		let token = response.data.token;
 		// console.log(token);
-  		console.log(response.data);
-		  localStorage.setItem('token',token);
+		  // console.log(response.data);
+		  if (token) {
+			  console.log(token);
+			  localStorage.setItem('token',token);
+			  this.register.username = '';
+			  this.register.fullname = '';
+			  this.register.email = '';
+			  this.register.password = '';
+			  this.register.phone = '';
+
+			  this.$router.push('/login');
+		  }
+
+		  else {
+			console.log(response.data);
+			this.register.username = '';
+			this.register.fullname = '';
+			this.register.email = '';
+			this.register.password = '';
+			this.register.phone = '';
+
+			this.msg = '';
+		  }
 })
 .catch(function (error) {
 	console.log(error);

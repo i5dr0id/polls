@@ -8,12 +8,12 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 
-Vue.use(VeeValidate);;
+Vue.use(VeeValidate);
 Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
-
+window.Event = new Vue;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

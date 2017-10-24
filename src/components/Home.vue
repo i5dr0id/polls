@@ -102,7 +102,7 @@ export default {
 }
 
 .home {
-  background: url('../assets/team.jpg'); 
+  background: url('../assets/team.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;

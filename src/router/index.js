@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Login from '@/components/Login'
-import Register from '@/components/Register'
-import Result from '@/components/Result'
+import Home from '@/pages/Home'
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+import Result from '@/pages/Result'
+import Active from '@/pages/Active'
+import Profile from '@/pages/Profile'
+import Logout from '@/pages/Logout'
 
 Vue.use(Router)
 
 export default new Router({
+	mode: 'history',
   routes: [
     {
       path: '/',
@@ -28,7 +32,22 @@ export default new Router({
 		path: '/result',
 		name: 'result',
 		component: Result
+	},
+	{
+		path: '/active/:id',
+		name: 'active',
+		component: Active
+	},
+	{
+		// Only Logged User can access this routes
+		path: '/profile/:id',
+		name: 'profile',
+		component: Profile
+	},
+	{
+		path: '/logout',
+		name: 'logout',
+		component: Logout
 	}
-  ],
-  mode: 'history'
+  ]
 })
