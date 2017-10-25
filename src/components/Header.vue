@@ -24,7 +24,7 @@
 
 						<!-- <div class="login-state-in" > -->
 							<li class="login-user"><a href="#"><router-link to="/logout">Logout</router-link></a></li>
-							<li><a href="#" class="btn btn-primary header-btn" id="btn-tran-login"><router-link class="userText" to="/profile:id">{{user}}</router-link></a></li>
+							<li><a href="#" class="btn btn-primary header-btn" id="btn-tran-login"><router-link class="userText" :to="/profile/ + active.id">{{user}}</router-link></a></li>
 						<!-- </div> -->
 
 						<!-- <div class="login-state-out" > -->
@@ -68,7 +68,7 @@ export default {
     return {
 		user: '',
 		active: {
-			id: 7	
+			id: null
 		},
 		api: 'https://poolap.herokuapp.com/users/authenticate',
 	  loggedIn: false
@@ -81,33 +81,33 @@ export default {
 	  }
   },
   mounted() {
+	// console.log('This is the ID: ', this.$store.state.profile.id);
 
-	  Event.$on('login', ($event)=>{
+	this.active.id = this.$store.state.profile.id;
+	  Event.$on('login', ($event)=>{ // login event
 		  this.loggedIn = true;
 		  this.user = $event.username;
+		  this.active.id = $event._id; 
+		//   console.log('id', $event._id);
+		//   console.log($event.phone)
 	  });
 
-	  Event.$on('loggedout', ()=> {
+	  Event.$on('loggedout', ()=> { // logout event
 		  this.loggedIn = false;
 	  });
 
-    let token = localStorage.getItem("token");
-    if (typeof token !== "undefined") {
-		// <i  v-show="loading" class="fa fa-spinner fa-spin"></i>
-      this.axios
-        .get(this.api, {
-          headers: {
-            "x-access-token": token
-          }
-        })
-        .then(response => {
-        //   this.user = response.data.users[0].username;
-		  console.log(response.data);
-		//   this.loading = false;
-		// this.loggedIn = true;
-        });
-	}
-	console.log();
+    // let token = localStorage.getItem("token");
+    // if (typeof token !== "undefined") {
+    //   this.axios
+    //     .get(this.api, {
+    //       headers: {
+    //         "x-access-token": token
+    //       }
+    //     })
+    //     .then(response => {
+	// 	  console.log(response.data);
+    //     });
+	// }
 	this.loading = false;
   }
 };
