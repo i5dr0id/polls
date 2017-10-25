@@ -6,6 +6,7 @@ import router from './router'
 import VeeValidate from 'vee-validate'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import { store } from './store/store'
 
 
 Vue.use(VeeValidate);
@@ -16,6 +17,7 @@ Vue.config.productionTip = false
 window.Event = new Vue;
 /* eslint-disable no-new */
 new Vue({
+  store: store,
   el: '#app',
   router,
   template: '<App/>',

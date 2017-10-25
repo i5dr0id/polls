@@ -32,8 +32,8 @@
 					 <!-- Remember me -->
 				</div>
 				<div class="form-group">
-					<!-- <button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin" :disabled="!((fields.username && fields.username.valid) && (fields.password && fields.password.valid))"> Log in</button> -->
-					<button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin"> Log in</button>
+					<button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin" :disabled="!((fields.username && fields.username.valid) && (fields.password && fields.password.valid))"> Log in</button>
+					<!-- <button class="btn btn-block btn-lg btn-log" @click.prevent="btnLogin"> Log in</button> -->
 				</div>
 				<div>
 					<span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
@@ -78,17 +78,26 @@ export default {
 		let token = response.data.token;
 		// console.log(token);
 		console.log(response.data);
+
+		// console.log('ididiididiid',response.data.user._id);
 		if (token) {
 			localStorage.setItem('token',token);			
 			Event.$emit('login', response.data.user);
 
+			this.$store.state.profile.username = response.data.user.username;
+			this.$store.state.profile.email = response.data.user.email;
+			this.$store.state.profile.name = response.data.user.fullname;
+			this.$store.state.profile.phone = response.data.user.phone;
+			this.$store.state.profile.id = response.data.user._id;
+
 			this.login.username = '';
 			this.login.password = '';
-			console.log(response.data.user.username);
+			// console.log(response.data.user.username);
+			// console.log('this is all', this.$store.state.profile.email);
 			// get token from localstorage
 			//  send token to server
 			// get username or let header get user from response header
-
+			// alert();
 		 	this.loading = false;
 			this.$router.push('/');
 		}
