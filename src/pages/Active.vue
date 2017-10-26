@@ -1,20 +1,13 @@
 <template>
 	<div class="root-element">
 
-		<div class="container poll-container" id="create-poll">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
+		<div class="container">
+			<div class="row center-xs center-sm center-md center-lg middle-xs middle-sm middle-md middle-lg">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
 					
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
-					<h1> ACTIVE POLLS WILL BE HERE</h1>
+
+					</div>
 				</div>
 			</div>
 		</div>
