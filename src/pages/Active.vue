@@ -24,14 +24,19 @@
 			  <div class="panel-body">
 				  <div class="form-group">
 					<div v-for="(opt, kiy) in options" :key="kiy">
-					  <input type="radio" class="options" :id="kiy" name="nameRadio">
-					  <label class="col-sm-8" for="option"> {{ opt }} </label> <hr>
+					  <input type="radio"  class="options" :id="kiy" name="nameRadio" v-bind:value="opt">
+              <span class="option">{{opt}}</span> <hr>
+				     <!-- <label class="col-sm-8" for="option"> {{ opt }} </label> <hr> -->
 				  	</div>
 				  </div>
 			  </div>
 
 		  </div>
+            <div class="vote-btn" style="text-align: center;">
+            <button class="btn-v btn btn-success" v-on:click="result">VOTE</button>
+            </div>
 		  </div>
+
 		</div> 
    
 
@@ -102,6 +107,33 @@ export default {
   text-align: center;
   margin-left: 24px;
   background-color: #ffffff;
+}
+
+.option{
+  width: 100%;
+/* padding-left: 2px; */
+/* padding-right:2px ; */
+  /*margin-left: 0px; */
+  text-align: left;
+  align-content: center;
+  margin-left: 24px;
+  background-color: #ffffff;
+  font-weight: 500;
+  color: #4e4868;
+  font-size: 20px;
+
+}
+
+.btn {
+  
+  margin-bottom: 20px;
+  text-align:center;
+
+}
+
+.options {
+height: 20px;
+width: 20px;
 }
 
 </style>
