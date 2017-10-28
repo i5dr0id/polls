@@ -1,24 +1,25 @@
 <template>
   <div class="container" style="margin-top: 100px;">
    
-        <div class="col-md-8 active-poll">
-            <br>
-            <div class="panel panel-default">
-               <div class="panel-heading">
-                  <h3 class="panel-title">Polls</h3>
-              </div>
-              <div class="panel-body">
-                  <form>
-                    <div class="preview-poll">
-                        <div class="form-group">
-                            <h2 id="preview-text"></h2>
-                             <h1 class="preview" readonly>{{ pollQuestion }}</h1>
-                        </div>      
-                    </div>
-                  </form>
-              </div>
-          </div>
+		<div class="col-md-8 active-poll">
+			<br>
+			<div class="panel panel-default">
+			   <div class="panel-heading">
+				  <h3 class="panel-title">Polls</h3>
+			  </div>
+			  <div class="panel-body">
+				  <form>
+					<div class="preview-poll">
+						<div class="form-group">
+							<h2 id="preview-text"></h2>
+							 <h1 class="preview" readonly>{{ pollQuestion }}</h1>
+						</div>      
+					</div>
+				  </form>
+			  </div>
+		  </div>
 
+<!-- <<<<<<< HEAD
           <div class="poll-option">
              <div class="panel panel-defaul">
                   <div class="panel-body">
@@ -35,6 +36,24 @@
                     <button class="btn-v btn btn-primary" v-on:click="result">VIEW RESULT</button>
               </div>
         </div> 
+======= -->
+		<div class="poll-option">
+		 <div class="panel panel-defaul">
+			  <div class="panel-body">
+				  <div class="form-group">
+					<div v-for="(opt, kiy) in options" :key="kiy">
+					  <input type="radio" class="options" :id="kiy" name="nameRadio">
+					  <label class="col-sm-8" for="option"> {{ opt }} </label> <hr>
+				  	</div>
+				  </div>
+			  </div>
+
+		  </div>
+		  </div>
+		</div> 
+   
+
+<!-- >>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df -->
 </div>
 
 
@@ -47,8 +66,31 @@ export default {
 	name: 'poll',
 	data() {
 		return {
-			msg: ''
+			msg: '',
+			pollQuestion: '',
+			options: [],
+			api: 'https://poolap.herokuapp.com/polls'
+
 		};
+	},
+
+	created() {
+		console.log('poll questions');
+		let token = localStorage.getItem("token");
+		if (token) {
+			this.axios
+			.get(this.api, {
+				headers: {
+					"x-access-token": token
+				}
+			})
+			.then(response => {
+				console.log(response.data);
+				this.pollQuestion = response.data.polls[0].question;
+				this.options = this.options.concat(response.data.polls[1].options);
+				console.log('This are the options \n', response.data.polls[1].options);
+			})
+		}
 	}
 }
 </script>
