@@ -51,7 +51,11 @@
 		</div>
 
 		<div class="container poll-container" id="create-poll">
+<<<<<<< HEAD
 			<div class="row">
+=======
+			<div class="row grid-1 container">
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 
 				<div class="col-sm-6">
 					<div class="make-poll">
@@ -85,7 +89,11 @@
 					</div>
 				</div>
 
+<<<<<<< HEAD
 				<div class="col-sm-6">
+=======
+				<div class="col-sm-6 col-xs-6 preview-part">
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 					<div class="view-poll">
 						<form>
 							<div class="preview-poll">
@@ -104,7 +112,11 @@
 								</div>
 							</div>
 							<div style="margin-top: 40px;">
+<<<<<<< HEAD
 								<button class="btn-v btn btn-info" v-on:click="vote">VOTE</button>
+=======
+								<button class="btn-v btn btn-success" v-on:click="vote">VOTE</button>
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 								<!-- <h1> Selected: {{ selected }} </h1> -->
 								<button class="btn-r btn btn-info">RESULT</button>
 							</div>
@@ -206,6 +218,10 @@ input[type="text"] {
 	padding: 10px;
 	font-size: 14px;
 	border: 1px solid #a6c9e2;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 }
 
 
@@ -237,6 +253,13 @@ form>div>div>h4 {
 	text-align: center;
 	margin-left: 24px;
 	background-color: #ffffff;
+<<<<<<< HEAD
+=======
+	overflow-wrap:break-word;
+}
+.preview[data-v-4c516fbe] {
+	overflow-wrap:break-word;
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 }
 
 .make-poll {
@@ -252,6 +275,14 @@ form>div>div>h4 {
 	border: none;
 	width: 100%;
 	margin-top: -0.2%;
+<<<<<<< HEAD
+=======
+	overflow-wrap:break-word;
+}
+
+.form-group{
+		overflow-wrap:break-word;
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 }
 
 .view-poll {
@@ -268,7 +299,10 @@ hr {
 button[type="submit"] {
 	margin-bottom: 5%;
 	margin-top:5%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 }
 
 h2 {
@@ -301,9 +335,21 @@ label {
 	margin-left: 0px;
 	text-align: center;
 	align-content: center;
+<<<<<<< HEAD
 
 }
 
+=======
+	overflow-wrap:break-word !important;
+
+}
+
+.opt-view row{
+	overflow-wrap:break-word !important;
+}
+
+
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 .btn-v {
 	margin-right: 3px;
 }
@@ -707,7 +753,10 @@ label {
 		max-width: 768px;
 		font-size: 15px;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 }
 
 @media only screen and (min-width:320px)and (max-width:480px) {
@@ -735,6 +784,7 @@ label {
 	H1 BR {
 		display: none;
 	}
+<<<<<<< HEAD
 .view-poll {
 		padding-bottom: 40px;
 		padding-top: 40px;
@@ -758,6 +808,44 @@ label {
 	overflow-wrap:break-word;
 }
 
+=======
+
+/**/Calory media query
+	.preview {
+		margin-top: 20px;
+		overflow-wrap:break-word;
+		margin-left: 24px;
+		margin-right: 24px;
+		width: 75%;
+		overflow-wrap:break-word;
+	}
+
+	.make-poll{
+		margin-top: 20px;
+	}
+
+	.view-poll {
+		width: 100%;
+		margin-top: 20px;
+
+	}
+
+	.view-poll[data-v-4c516fbe] {
+			margin-top: 20px;
+	}
+
+	.opt-view {
+		overflow-wrap:break-word !important;
+	}
+	.col-sm-8 {
+		overflow-wrap:break-word !important;
+
+	}
+
+	.preview-part{
+		margin-top: 20px:
+	}
+>>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df
 }
 
 @media only screen and (max-width:479px) {

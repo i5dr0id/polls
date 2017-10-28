@@ -1,7 +1,7 @@
 <template>
-	<footer class="footer ">
+	<footer class="footer navbar-default navbar-fixed-bottom ">
 		<nav class="navbar navbar-static-bottom footer">
-		<div class="container">
+		<div class="container container-fluid">
 			<div class="navbar-header">
 				<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
 					<span class="sr-only">Toggle navigation</span>

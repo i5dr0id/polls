@@ -6,6 +6,7 @@
 
 				<div class="col-sm-6">
 					<div class="make-poll">
+						
 						<form>
 							<!-- QUESTIONS -->
 							<div class="question-div">
