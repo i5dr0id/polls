@@ -79,9 +79,17 @@ export default {
 		// console.log(token);
 		console.log(response.data);
 
-		// console.log('ididiididiid',response.data.user._id);
 		if (token) {
-			localStorage.setItem('token',token);			
+			localStorage.setItem('token',token);
+			localStorage.setItem('username',response.data.user.username);
+			localStorage.setItem('id', response.data.user._id);
+			// console.log('local username', localStorage.getItem('username'));
+			// localStorage.setItem('username', user.username);
+			// localStorage.setItem('email', user.email);
+			// localStorage.setItem('name', user.name);
+			// localStorage.setItem('phone', user.phone);
+			
+
 			Event.$emit('login', response.data.user);
 
 			this.$store.state.profile.username = response.data.user.username;
@@ -89,6 +97,8 @@ export default {
 			this.$store.state.profile.name = response.data.user.fullname;
 			this.$store.state.profile.phone = response.data.user.phone;
 			this.$store.state.profile.id = response.data.user._id;
+
+
 
 			this.login.username = '';
 			this.login.password = '';
