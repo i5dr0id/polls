@@ -19,19 +19,22 @@
               </div>
           </div>
 
-        <div class="poll-option">
-         <div class="panel panel-defaul">
-              <div class="panel-body">
-                  <div class="form-group">
-                      <input type="radio" class="options" :id="o_key" name="nameRadio">
+          <div class="poll-option">
+             <div class="panel panel-defaul">
+                  <div class="panel-body">
+                      <div class="form-group">
+                          <input type="radio" class="options" :id="o_key" name="nameRadio">
+                      </div>
+
                   </div>
+
               </div>
-
-          </div>
-          </div>
+             
+            </div>
+                        <div style="margin-top: 40px; text-align: center;" class="resultButton"> 
+                    <button class="btn-v btn btn-primary" v-on:click="result">VIEW RESULT</button>
+              </div>
         </div> 
-   
-
 </div>
 
 
@@ -76,6 +79,9 @@ export default {
   text-align: center;
   margin-left: 24px;
   background-color: #ffffff;
+}
+.resultButton {
+  margin-bottom: 10px;
 }
 
 </style>
