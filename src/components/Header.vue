@@ -1,6 +1,6 @@
 <template>
-	<header>	
-		<nav class="navbar navbar-default navbar-fixed-top nav-trans" id="navT">	
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top nav-trans" id="navT">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
@@ -55,158 +55,162 @@
 					</div>
 				</div>
 
-				
+
 			</div>
 		</nav>
 	</header>
 </template>
 <script>
 export default {
-  // loginType: 'username',
-  props:['username'],
-  data() {
-    return {
+	// loginType: 'username',
+	props:['username'],
+	data() {
+	return {
 		user: '',
 		active: {
 			id: null
 		},
 		api: 'https://poolap.herokuapp.com/users/authenticate',
-	  loggedIn: false
-    };
-  },
+		loggedIn: false
+	};
+	},
 
-  methods: {
-	  logout() {
-		  localStorage.removeItem("token");
-	  }
-  },
-  mounted() {
+	methods: {
+		logout() {
+			localStorage.removeItem("token");
+		}
+	},
+	mounted() {
 	// console.log('This is the ID: ', this.$store.state.profile.id);
 
 	this.active.id = this.$store.state.profile.id;
-	  Event.$on('login', ($event)=>{ // login event
-		  this.loggedIn = true;
-		  this.user = $event.username;
-		  this.active.id = $event._id; 
+		Event.$on('login', ($event)=>{ // login event
+			this.loggedIn = true;
+			this.user = $event.username;
+			this.active.id = $event._id;
 		//   console.log('id', $event._id);
 		//   console.log($event.phone)
-	  });
+		});
 
-	  Event.$on('loggedout', ()=> { // logout event
-		  this.loggedIn = false;
-	  });
+		Event.$on('loggedout', ()=> { // logout event
+			this.loggedIn = false;
+		});
 
-    // let token = localStorage.getItem("token");
-    // if (typeof token !== "undefined") {
-    //   this.axios
-    //     .get(this.api, {
-    //       headers: {
-    //         "x-access-token": token
-    //       }
-    //     })
-    //     .then(response => {
-	// 	  console.log(response.data);
-    //     });
-	// }
+
 	this.loading = false;
-  }
+	},
+
+	created () {
+	let token = localStorage.getItem("token");
+	if (typeof token !== "undefined") {
+		this.axios
+		.get(this.api, {
+			headers: {
+			"x-access-token": token
+			}
+		})
+		.then(response => {
+			console.log(response.data);
+		});
+	}
+	}
 };
 </script>
 <style scoped>
 .nav-trans {
-  background: none;
+	background: none;
 }
 
 .navbar-default {
-  background-color: #0084b4;
-  border-bottom: none;
+	background-color: #0084b4;
+	border-bottom: none;
 }
 
 .navbar {
-  background: #0084b4;
-  min-height: 70px !important;
+	background: #0084b4;
+	min-height: 70px !important;
 }
 
 .navbar-header {
-  padding-top: 10px;
+	padding-top: 10px;
 }
 
 .navbar-toggle {
-  position: relative;
-  float: right;
-  padding: 9px 10px;
-  margin-top: 8px;
-  margin-right: 15px;
-  margin-bottom: 8px;
-  background-color: transparent !important;
-  background-image: none;
-  border: 1px solid transparent !important;
-  border-radius: 4px;
+	position: relative;
+	float: right;
+	padding: 9px 10px;
+	margin-top: 8px;
+	margin-right: 15px;
+	margin-bottom: 8px;
+	background-color: transparent !important;
+	background-image: none;
+	border: 1px solid transparent !important;
+	border-radius: 4px;
 }
 
 button {
-  height: 3.5rem;
-  padding: 0;
-  color: #fff;
-  font-size: 14px;
-  text-transform: uppercase;
-  background-color: rgba(0, 0, 115, 0.6);
+	height: 3.5rem;
+	padding: 0;
+	color: #fff;
+	font-size: 14px;
+	text-transform: uppercase;
+	background-color: rgba(0, 0, 115, 0.6);
 }
 
 .icon-bar {
-  background: #ffffff !important;
-  border: none !important;
+	background: #ffffff !important;
+	border: none !important;
 }
 
 .navbar-brand {
-  color: #fff !important;
+	color: #fff !important;
 }
 
 .mp-logo {
-  font-family: Lato, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 22px;
-  color: #ffffff !important;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  float: left;
-  height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+	font-family: Lato, Helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 22px;
+	color: #ffffff !important;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	float: left;
+	height: 50px;
+	padding: 15px 15px;
+	font-size: 18px;
+	line-height: 20px;
 }
 
 .navbar-collapse {
-  border-top: 1px solid transparent !important;
+	border-top: 1px solid transparent !important;
 }
 
 .nav.navbar-nav li a {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 15px;
-  background: none;
-  border-radius: 30px;
-  font-family: Lato, Helvetica, sans-serif;
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 15px;
+	background: none;
+	border-radius: 30px;
+	font-family: Lato, Helvetica, sans-serif;
 }
 
 #btn-tran-login {
-  background-color: transparent !important;
-  width: 140px;
-  border-radius: 0px!important;
-  /* padding-bottom: 900%; */
+	background-color: transparent !important;
+	width: 140px;
+	border-radius: 0px!important;
+	/* padding-bottom: 900%; */
 }
 
 #btn-tran-out {
-	
+
 }
 .navbar-right {
-  padding-top: 10px;
+	padding-top: 10px;
 }
 
 /* .nav.navbar-nav li a {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 15px;
-  background: none;
-  border-radius: 30px;
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 15px;
+	background: none;
+	border-radius: 30px;
 } */
 
 /* #btn-tran {
@@ -215,15 +219,15 @@ button {
 } */
 
 .header-btn {
-  padding: 5px 10px !important;
-  margin-top: 10px !important;
-  border: 2px solid #fff;
-  border-color: #ffffff !important;
-  margin: auto;
+	padding: 5px 10px !important;
+	margin-top: 10px !important;
+	border: 2px solid #fff;
+	border-color: #ffffff !important;
+	margin: auto;
 }
 
 .btn {
-  box-shadow: none;
+	box-shadow: none;
 }
 
 .login-state-in {
@@ -234,7 +238,7 @@ button {
 
 .login-state-in > .login-user {
 	padding-top: 8%;
-    margin-right: 10%;
+	margin-right: 10%;
 }
 
 .login-state-in > #btn-tran {
@@ -262,7 +266,7 @@ button {
 
 .login-state-out > .login-user-out {
 	padding-top: 8%;
-    margin-right: 15%;
+	margin-right: 15%;
 }
 
 .login-state-out > #btn-tran {
@@ -272,10 +276,10 @@ button {
 }
 
 .header-btn-out {
-  padding: 5px 50px !important;
-  margin-top: 10px !important;
-  border: 2px solid #fff;
-  border-color: #ffffff !important;
-  margin: auto;
+	padding: 5px 50px !important;
+	margin-top: 10px !important;
+	border: 2px solid #fff;
+	border-color: #ffffff !important;
+	margin: auto;
 }
 </style>
