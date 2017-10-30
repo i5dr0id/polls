@@ -8,8 +8,14 @@
         <div class="panel-body">
           <h4>Question 1</h4> <br>
           <div class="row">
-            <div class="col-sml-3">
-            <h3 class="option-list" > Answer Option 1:</h3> <button type="submit" class="btn btn-success" value="submit"> 700 votes</button>
+            <div>
+             <button  type="submit" class="btn btn-primary" value="submit"> 700 votes</button>
+             <h5 class="option-list" > Answer Option 1:</h5>
+            </div>
+
+             <div>
+             <button  type="submit" class="btn btn-primary" value="submit"> 700 votes</button>
+             <h5 class="option-list" > Answer Option 1:</h5>
             </div>
           
           </div><br>
@@ -28,10 +34,12 @@
           <h3 class="panel-title">Popular Polls</h3>
         </div>
         <div class="panel-body">
+
           <div>
-            <h2 class="poll-title"> poll title</h2><button type="submit" style="float:right; margin-top:20px;" class="btn btn-success" value="submit"> View poll</button>
+          <button type="submit" class="btn btn-success" value="submit"> View poll</button>
+          <h2 class="poll-title"> poll question</h2>
           </div>
-         <!-- <h1>Poll titile</h1><button class="btn btn-default" value="submit"> View </button> -->
+            
         </div>
       </div>
 
@@ -63,5 +71,33 @@ export default {
 
 }
 
+div {
+    /*background: purple;*/
+    overflow: hidden;
+}
+
+div h5 {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-right: -50%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+div button {
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+div h2 {
+    /*text-align: center;*/
+    display: inline-block;
+    width: 100%;
+    margin-right: -50%;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: -5px;
+}
 
 </style>
