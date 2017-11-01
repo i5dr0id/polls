@@ -7,6 +7,7 @@ import Result from '@/pages/Result'
 import Active from '@/pages/Active'
 import Profile from '@/pages/Profile'
 import Logout from '@/pages/Logout'
+import About from '@/pages/About'
 
 Vue.use(Router)
 

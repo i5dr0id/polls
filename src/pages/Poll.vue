@@ -56,7 +56,7 @@
 								</div>
 							</div>
 							<div style="margin-top: 40px;"> 
-								<button class="btn-v btn btn-success" v-on:click="makePoll">Create Poll</button>
+								<button class="btn-v btn btn-success" v-on:click.prevent="makePoll">Create Poll</button>
 								<!-- <h1> Selected: {{ selected }} </h1> -->
 								<!-- <button class="btn-r btn btn-info">RESULT</button> -->
 							</div>
@@ -69,210 +69,229 @@
 </template>
 
 <script>
-
-
 export default {
-	name: 'poll',
-	data() {
-		return {
-			msg: '',
-			xyz: 'Choice...',
-			p_options: ["Option 1"],
-			finds: [{value: ''}],
-			aaa: null,
-			selected: '',
-			// showS: false
-		};
-	},
-	methods: {
-		txtAddInput: function(e) {
-			if (this.finds.value != '') {
-				// this.showS = true;
-				if (e.target.id == this.finds.length - 1) {
-				e.target.isDirty = true;
-				this.finds.push({ value: '' });
-			}
-			}
-			if (e.target.isDirty && e.target.value == '') {
-				this.finds.splice(e.target.id, 1)
-			}
-		},
+  name: "poll",
+  data() {
+    return {
+      msg: "",
+      xyz: "Choice...",
+      p_options: ["Option 1"],
+      finds: [{ value: "" }],
+      aaa: null,
+      selected: "",
+      options: [],
+      api: "https://poolap.herokuapp.com/polls",
+      username: "",
+      question: ""
+    };
+  },
+  methods: {
+    txtAddInput: function(e) {
+      if (this.finds.value != "") {
+        // this.showS = true;
+        if (e.target.id == this.finds.length - 1) {
+          e.target.isDirty = true;
+          this.finds.push({ value: "" });
+        }
+      }
+      if (e.target.isDirty && e.target.value == "") {
+        this.finds.splice(e.target.id, 1);
+      }
+    },
 
-		btnAddInput: function(){
-			this.finds.push({ value: '' });
-		},
+    btnAddInput: function() {
+      this.finds.push({ value: "" });
+    },
 
-		vote: function() {
-			alert("You Voted for " + this.selected);
-		}
-	}
-}
+    vote: function() {
+      alert("You Voted for " + this.selected);
+    },
+
+    makePoll: function() {
+      console.log(this.msg);
+      var token = localStorage.getItem("token");
+      var username = localStorage.getItem("username");
+      this.question = this.msg;
+
+      this.finds.forEach(function(element) {
+        console.log(element.value);
+        this.options.push(element.value);
+      }, this);
+
+      console.log(
+        "these are the options ",
+        this.options.filter(entry => entry.trim() != "")
+      );
+      if (token) {
+        this.axios
+          .post(this.api, {
+            username: this.username,
+            question: this.question,
+            options: this.options.filter(entry => entry.trim() != "")
+          })
+          .then(response => {
+            console.log(response.data);
+          });
+      } else {
+        alert("Login First");
+      }
+    }
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #hello {
-	border: 1px solid red;
-	width: 100%;
-	background-color: #000000;
+  border: 1px solid red;
+  width: 100%;
+  background-color: #000000;
 }
 
 .poll-container {
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 .grid-1 {
-	/* background-color: red;  */
-	/* margin-left: -9.2%; */
-	margin-top: 4%;
-	    width: 100%;
+  /* background-color: red;  */
+  /* margin-left: -9.2%; */
+  margin-top: 4%;
+  width: 100%;
 }
 
 .question-div {
-	/* text-align: center; */
-	padding-left: 4%;
-	padding-right: 4%;
+  /* text-align: center; */
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 textarea {
-	font-family: 'Roboto Condensed', sans-serif;
-	height: 80px;
-	width: 100%;
-	border: 1px solid #a6c9e2;
-	/* border-radius: 8px; */
-	color: #000000;
-	font-size: 15px;
-	font-weight: 500;
-	line-height: 30px;
-	outline: none;
-	padding: 24px 16px;
-	/* resize: none; */
-	text-align: left;
-	font-family: arial, verdana;
-	padding: 5%;
+  font-family: "Roboto Condensed", sans-serif;
+  height: 80px;
+  width: 100%;
+  border: 1px solid #a6c9e2;
+  /* border-radius: 8px; */
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  outline: none;
+  padding: 24px 16px;
+  /* resize: none; */
+  text-align: left;
+  font-family: arial, verdana;
+  padding: 5%;
 }
 
 input[type="text"] {
-	margin: 0px;
-	width: 100%;
-	padding: 10px;
-	font-size: 14px;
-	border: 1px solid #a6c9e2;
+  margin: 0px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #a6c9e2;
 }
-
-
-
 
 form {
-	text-align: center;
+  text-align: center;
 }
 
-form>div>div>h3,
-form>div>div>h4 {
-	text-align: center;
-	padding-top: 19px;
+form > div > div > h3,
+form > div > div > h4 {
+  text-align: center;
+  padding-top: 19px;
 }
-
 
 .preview {
-	/* height: 150px; */
-	width: 90%;
-	border: none;
-	border-radius: 8px;
-	color: #4e4868;
-	font-size: 26px;
-	font-weight: 500;
-	line-height: 30px;
-	outline: none;
-	padding: 24px 16px;
-	resize: none;
-	text-align: center;
-	margin-left: 24px;
-	background-color: #ffffff;
+  /* height: 150px; */
+  width: 90%;
+  border: none;
+  border-radius: 8px;
+  color: #4e4868;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 30px;
+  outline: none;
+  padding: 24px 16px;
+  resize: none;
+  text-align: center;
+  margin-left: 24px;
+  background-color: #ffffff;
 }
 
 .make-poll {
-	/* background-color: #4da5f5; */
-	border: none;
-	width: 100%;
-	border: 1px solid #000000;
-	box-shadow: 10px 10px 5px #888888;
+  /* background-color: #4da5f5; */
+  border: none;
+  width: 100%;
+  border: 1px solid #000000;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .preview-poll {
-	/* background-color: #00B394; */
-	border: none;
-	width: 100%;
-	margin-top: -0.2%;
+  /* background-color: #00B394; */
+  border: none;
+  width: 100%;
+  margin-top: -0.2%;
 }
 
 .view-poll {
-	width: 75%;
-	float: right;
-	background-color: #00B394;
-	padding-bottom: 40px;
+  width: 75%;
+  float: right;
+  background-color: #00b394;
+  padding-bottom: 40px;
 }
 
 hr {
-	width: 100%
+  width: 100%;
 }
 
 button[type="submit"] {
-	margin-bottom: 5%;
-	margin-top:5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 h2 {
-	margin-top: 0;
+  margin-top: 0;
 }
 
-
 label {
-	font-size: 150%;
-	color: #ffffff;
+  font-size: 150%;
+  color: #ffffff;
 }
 
 .optm {
-	width: 30%;
-	margin-right: -50px;
-	padding-right: 0px;
-	margin-top: 10px;
-	min-height: 20px;
+  width: 30%;
+  margin-right: -50px;
+  padding-right: 0px;
+  margin-top: 10px;
+  min-height: 20px;
 }
 
 label {
-	/* margin-left: -10px; */
-	margin-bottom: 10px;
+  /* margin-left: -10px; */
+  margin-bottom: 10px;
 }
 
 .opt-view {
-	width: 100%;
-/* padding-left: 2px; */
-/* padding-right:2px ; */
-	margin-left: 0px; 
-	text-align: center;
-	align-content: center;
-
+  width: 100%;
+  /* padding-left: 2px; */
+  /* padding-right:2px ; */
+  margin-left: 0px;
+  text-align: center;
+  align-content: center;
 }
 
 .btn-v {
-	margin-right: 3px;
+  margin-right: 3px;
 }
 
 .btn-r {
-	margin-left: 3px;
+  margin-left: 3px;
 }
-
 
 #preview-text {
-	font-size: 26px;
-	padding-top: 20px;
+  font-size: 26px;
+  padding-top: 20px;
 }
-
-
-
-
-
 
 /****FONT AWESOME*****/
 
@@ -283,6 +302,4 @@ label {
 	font-weight: normal;
 	font-style: normal;
 } */
-
-
 </style>

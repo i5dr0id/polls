@@ -15,7 +15,7 @@
 
 export default {
   components: {
-    "poll-view": Poll
+    // "poll-view": Poll
   },
   name: "HelloWorld",
   data() {

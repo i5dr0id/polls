@@ -56,9 +56,6 @@
 		  </div>
 
 		</div> 
-   
-
-<!-- >>>>>>> e164c9634ffbd9a5513764a04d9a732105ebb5df -->
 </div>
 
 
@@ -106,9 +103,10 @@ export default {
   /* background-color: #4da5f5; */
   border: none;
   width: 100%;
-  border: 1px solid #000000;
-  box-shadow: 10px 10px 5px #888888;
+  /* border: 1px solid #000000; */
+  /* box-shadow: 10px 10px 5px #888888; */
   height: auto;
+  margin-bottom: 10%;
 }
 
 .preview {

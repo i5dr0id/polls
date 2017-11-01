@@ -20,7 +20,7 @@
 						<li><a href="#livepolls"><router-link :to="{name:'active', params:{id:active.id}}">Live-Polls</router-link></a></li>
 						<li><a><router-link to="/result">Result</router-link></a></li>
 						<li><a href="#">features</a></li>
-						<li><a href="#about">About</a></li>
+						<li><a href="#"><router-link to="/about">About</router-link></a></li>
 
 						<!-- <div class="login-state-in" > -->
 							<li class="login-user"><a href="#"><router-link to="/logout">Logout</router-link></a></li>
@@ -97,8 +97,8 @@ export default {
       // login event
       this.loggedIn = true;
       // this.user = $event.username;
-      // this.active.id = $event._id;
-      //   console.log('id', $event._id);
+      this.active.id = $event._id;
+        // console.log('id', $event._id);
       //   console.log($event.phone)
       this.user = localStorage.getItem("username");
       // this.active.id = localStorage.getItem('id');
@@ -107,7 +107,12 @@ export default {
     Event.$on("loggedout", () => {
       // logout event
       this.user = '';
-    });
+	});
+	
+	// Event.$on("id", () => {
+    //   // logout event
+    //   this.active.id = $event._id;
+    // });
 
     this.loading = false;
   },

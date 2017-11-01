@@ -91,6 +91,7 @@ export default {
 			
 
 			Event.$emit('login', response.data.user);
+			Event.$emit('id', response.data.user._id);
 
 			this.$store.state.profile.username = response.data.user.username;
 			this.$store.state.profile.email = response.data.user.email;
