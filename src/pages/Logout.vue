@@ -32,10 +32,16 @@ export default {
 	},
 
 	created () {
-		let token = localStorage.getItem('token');
+		// let token = localStorage.getItem('token');
 		localStorage.removeItem('token');
+		localStorage.removeItem('username');
+		localStorage.removeItem('id');
 
 		Event.$emit('loggedout');
+	},
+
+	mounted () {
+		this.$router.push('/');
 	}
 }
 </script>

@@ -109,9 +109,10 @@ export default {
 		phone: this.register.phone
 	}).then((response) => {
 		let token = response.data.token;
+		var code = response.data.responseCode;
 		// console.log(token);
-		  // console.log(response.data);
-		  if (token) {
+		//   console.log('code code', response.data.responseCode);
+		  if (code === '00') {
 			  console.log(token);
 			  localStorage.setItem('token',token);
 			  this.register.username = '';
@@ -121,6 +122,10 @@ export default {
 			  this.register.phone = '';
 
 			  this.$router.push('/login');
+		  }
+
+		  else if (code == '02') {
+			  this.msg = 'User already exist';
 		  }
 
 		  else {

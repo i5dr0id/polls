@@ -31,7 +31,7 @@
 								</div>
 							</div>
 							<div class="">
-								<button type="submit" class="btn btn-primary">Create Poll</button>
+								<!-- <button type="submit" class="btn btn-primary">Create Poll</button> -->
 							</div>
 						</form>
 					</div>
@@ -56,9 +56,9 @@
 								</div>
 							</div>
 							<div style="margin-top: 40px;"> 
-								<button class="btn-v btn btn-success" v-on:click="vote">VOTE</button>
+								<button class="btn-v btn btn-success" v-on:click="makePoll">Create Poll</button>
 								<!-- <h1> Selected: {{ selected }} </h1> -->
-								<button class="btn-r btn btn-info">RESULT</button>
+								<!-- <button class="btn-r btn btn-info">RESULT</button> -->
 							</div>
 						</form>
 					</div>

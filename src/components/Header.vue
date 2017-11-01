@@ -76,12 +76,22 @@ export default {
   },
 
   methods: {
-    logout() {
-      localStorage.removeItem("token");
-    }
+    // logout() {
+    //   localStorage.removeItem("token", "username", "id");
+    //   //   localStorage.removeItem(username);
+    //   //   localStorage.removeItem("id");
+    // }
+  },
+
+  watch: {
+
   },
   mounted() {
     // this.active.id = this.$store.state.profile.id;
+
+	if (!this.user) {
+		console.log('no user', this.user);
+	}
     this.active.id = localStorage.getItem("id");
     Event.$on("login", $event => {
       // login event
@@ -96,7 +106,7 @@ export default {
 
     Event.$on("loggedout", () => {
       // logout event
-      this.loggedIn = false;
+      this.user = '';
     });
 
     this.loading = false;
