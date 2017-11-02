@@ -1,11 +1,20 @@
 <template>
-	<div class="container">
-	<div class="col-md-8" style="background-color: rgb(255,243,246);">
-		
-	</div>
-	<div class="col-md-4"></div>
 
+<div id="first_column" style="width: 25%; float: left;margin-right:5px;">
+	<div style="border: 1px solid blue; width: 100%;">
+		<span style="align:center;">Cusomter</span>
 	</div>
+</div>
+
+<div id="second_column" style="width: 25%; float: left;margin-right:5px;">
+	<div style="border: 1px solid blue; width: 100%;;padding-left:0px;">2</div>
+</div>
+<div id="third_column" style="width: 25%; float: left;margin-right:5px;">
+	<div style="border: 1px solid blue; width: 100%;;padding-left:0px;">3</div>
+</div>
+<div id="fourth_column" style="width: 25%; float: left;">
+	<div style="border: 1px solid blue; width: 100%;;padding-left:0px;">4</div>
+</div>
 </template>
 
 
