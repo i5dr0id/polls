@@ -17,12 +17,12 @@
              <button  type="submit" class="btn btn-primary" value="submit"> 700 votes</button>
              <h5 class="option-list" > Answer Option 1:</h5>
             </div>
-          
+
           </div><br>
 
-       
 
-     
+
+
 
 
         </div>
@@ -39,7 +39,7 @@
           <button type="submit" class="btn btn-success" value="submit"> View poll</button>
           <h2 class="poll-title"> poll question</h2>
           </div>
-            
+
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="margin-top: 100px;">
-   
+
 		<div class="col-md-8 active-poll">
 			<br>
 			<div class="panel panel-default">
@@ -13,30 +13,12 @@
 						<div class="form-group">
 							<h2 id="preview-text"></h2>
 							 <h1 class="preview" readonly>{{ pollQuestion }}</h1>
-						</div>      
+						</div>
 					</div>
 				  </form>
 			  </div>
 		  </div>
 
-<!-- <<<<<<< HEAD
-          <div class="poll-option">
-             <div class="panel panel-defaul">
-                  <div class="panel-body">
-                      <div class="form-group">
-                          <input type="radio" class="options" :id="o_key" name="nameRadio">
-                      </div>
-
-                  </div>
-
-              </div>
-             
-            </div>
-                        <div style="margin-top: 40px; text-align: center;" class="resultButton"> 
-                    <button class="btn-v btn btn-primary" v-on:click="result">VIEW RESULT</button>
-              </div>
-        </div> 
-======= -->
 		<div class="poll-option">
 		 <div class="panel panel-defaul">
 			  <div class="panel-body">
@@ -55,7 +37,7 @@
             </div>
 		  </div>
 
-		</div> 
+		</div>
 </div>
 
 
@@ -145,7 +127,7 @@ export default {
 }
 
 .btn {
-  
+
   margin-bottom: 20px;
   text-align:center;
 

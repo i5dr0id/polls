@@ -108,7 +108,7 @@ export default {
       // logout event
       this.user = '';
 	});
-	
+
 	// Event.$on("id", () => {
     //   // logout event
     //   this.active.id = $event._id;

@@ -94,7 +94,7 @@ export default {
     //   .then(response => {
     //     console.log(response.data);
 	//   });
-	
+
 	// console.log(token);
   }
 };
