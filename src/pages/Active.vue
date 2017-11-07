@@ -30,17 +30,38 @@
 				  	</div>
 				  </div>
 			  </div>
+			  </div>
+			  </div>
 
-		  </div>
-            <div class="vote-btn" style="text-align: center;">
-            <button class="btn-v btn btn-success" v-on:click="result">VOTE</button>
-            </div>
-		  </div>
+			    <div class="col-md-6" >
+                        <div class="box-form">
+                            <h3>Please complete the form</h3>
+                            <p>Some Information About Yourself and Comment on the poll</p>
+                            <form id="contact_form" action="#" method="post">
+                                <div class="row">
+                                    <div class="nameInput">
+                                        <input class="uk-width-1-1 form-control" type="text" placeholder="Your Name" name="name">
+                                    </div>
+                                    <div class="emailInput">
+                                        <input class=" form-control" type="email" placeholder="Your Email" name="email">
+                                    </div>
+                                    <div class="textInput">
+                                        <textarea class="form-control" rows="5" placeholder="Comment" name="message"></textarea>
+                                    </div>
+                                </div>
+                               
+            						<div class="vote-btn" style="text-align: center;">
+            							<button class="btn-v btn btn-success" v-on:click="result">VOTE</button>
+           							 </div>
+		
+                                <div class="response"></div>
+                            </form>
+                        </div>
 
-		</div>
+                 </div>
+	</div>
+
 </div>
-
-
 </template>
 
 <script>
@@ -136,6 +157,26 @@ export default {
 .options {
 height: 20px;
 width: 20px;
+}
+
+.nameInput {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.emailInput {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.vote-btn {
+	margin-top: 10px;
+}
+
+.h3 .p {
+	color: #4e4868;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 </style>
