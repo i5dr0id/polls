@@ -33,32 +33,38 @@
 			  </div>
 			  </div>
 
-			    <div class="col-md-6" >
-                        <div class="box-form">
-                            <h3>Please complete the form</h3>
-                            <p>Some Information About Yourself and Comment on the poll</p>
-                            <form id="contact_form" action="#" method="post">
-                                <div class="row">
-                                    <div class="nameInput">
-                                        <input class="uk-width-1-1 form-control" type="text" placeholder="Your Name" name="name">
-                                    </div>
-                                    <div class="emailInput">
-                                        <input class=" form-control" type="email" placeholder="Your Email" name="email">
-                                    </div>
-                                    <div class="textInput">
-                                        <textarea class="form-control" rows="5" placeholder="Comment" name="message"></textarea>
-                                    </div>
-                                </div>
-                               
-            						<div class="vote-btn" style="text-align: center;">
-            							<button class="btn-v btn btn-success" v-on:click="result">VOTE</button>
-           							 </div>
-		
-                                <div class="response"></div>
-                            </form>
-                        </div>
+			  <form id="contact-form" class="checkform" action="#" target="#" method="post">
+                <div class="form-row clearfix">
+                  <label for="name" class="req">Name *</label>
+                  <div class="form-value">
+                    <input type="text" name="name" class="name" id="name" value="" />
+                  </div>
+                </div>
+                <div class="form-row clearfix">
+                  <label for="email" class="req">Email *</label>
+                  <div class="form-value">
+                    <input type="text" name="email" class="email" id="email" value="" />
+                  </div>
+                </div>
+                <div class="form-row clearfix textbox">
+                  <label for="message" class="req">Message *</label>
+                  <div class="form-value">
+                    <textarea name="message" class="message" id="message" rows="15" cols="50"></textarea>
+                  </div>
+                </div>
+                <div id="form-note">
+                  <div class="alert alert-error">
+                    <h6><strong>Error</strong>: Please check your entries!</h6>
+                  </div>
+                </div>
+                <div class="form-row form-submit">
+                  <input type="submit" name="submit_form" class="btn btn-primary" value="vote" />
+                </div>
+                <input type="hidden" name="subject" value="Contact from website" />
+                <input type="hidden" name="fields" value="name,email,message," />
+                <input type="hidden" name="to" value="bosun@hidefperformance.com" />
+              </form>
 
-                 </div>
 	</div>
 
 </div>
