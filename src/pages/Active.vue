@@ -1,6 +1,6 @@
 <template>
   <div class="container" style="margin-top: 100px;">
-   
+
 		<div class="col-md-8 active-poll">
 			<br>
 			<div class="panel panel-default">
@@ -13,30 +13,12 @@
 						<div class="form-group">
 							<h2 id="preview-text"></h2>
 							 <h1 class="preview" readonly>{{ pollQuestion }}</h1>
-						</div>      
+						</div>
 					</div>
 				  </form>
 			  </div>
 		  </div>
 
-<!-- <<<<<<< HEAD
-          <div class="poll-option">
-             <div class="panel panel-defaul">
-                  <div class="panel-body">
-                      <div class="form-group">
-                          <input type="radio" class="options" :id="o_key" name="nameRadio">
-                      </div>
-
-                  </div>
-
-              </div>
-             
-            </div>
-                        <div style="margin-top: 40px; text-align: center;" class="resultButton"> 
-                    <button class="btn-v btn btn-primary" v-on:click="result">VIEW RESULT</button>
-              </div>
-        </div> 
-======= -->
 		<div class="poll-option">
 		 <div class="panel panel-defaul">
 			  <div class="panel-body">
@@ -48,17 +30,44 @@
 				  	</div>
 				  </div>
 			  </div>
+			  </div>
+			  </div>
 
-		  </div>
-            <div class="vote-btn" style="text-align: center;">
-            <button class="btn-v btn btn-success" v-on:click="result">VOTE</button>
-            </div>
-		  </div>
+			  <form id="contact-form" class="checkform" action="#" target="#" method="post">
+                <div class="form-row clearfix">
+                  <label for="name" class="req">Name *</label>
+                  <div class="form-value">
+                    <input type="text" name="name" class="name" id="name" value="" />
+                  </div>
+                </div>
+                <div class="form-row clearfix">
+                  <label for="email" class="req">Email *</label>
+                  <div class="form-value">
+                    <input type="text" name="email" class="email" id="email" value="" />
+                  </div>
+                </div>
+                <div class="form-row clearfix textbox">
+                  <label for="message" class="req">Message *</label>
+                  <div class="form-value">
+                    <textarea name="message" class="message" id="message" rows="15" cols="50"></textarea>
+                  </div>
+                </div>
+                <div id="form-note">
+                  <div class="alert alert-error">
+                    <h6><strong>Error</strong>: Please check your entries!</h6>
+                  </div>
+                </div>
+                <div class="form-row form-submit">
+                  <input type="submit" name="submit_form" class="btn btn-primary" value="vote" />
+                </div>
+                <input type="hidden" name="subject" value="Contact from website" />
+                <input type="hidden" name="fields" value="name,email,message," />
+                <input type="hidden" name="to" value="bosun@hidefperformance.com" />
+              </form>
 
-		</div> 
+	</div>
+
 </div>
-
-
 </template>
 
 <script>
@@ -145,7 +154,7 @@ export default {
 }
 
 .btn {
-  
+
   margin-bottom: 20px;
   text-align:center;
 
@@ -154,6 +163,26 @@ export default {
 .options {
 height: 20px;
 width: 20px;
+}
+
+.nameInput {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.emailInput {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.vote-btn {
+	margin-top: 10px;
+}
+
+.h3 .p {
+	color: #4e4868;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 </style>

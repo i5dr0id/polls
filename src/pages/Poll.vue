@@ -1,3 +1,4 @@
+
 <template>
 	<div class="root-element">
 
@@ -6,7 +7,7 @@
 
 				<div class="col-sm-6">
 					<div class="make-poll">
-						
+
 						<form>
 							<!-- QUESTIONS -->
 							<div class="question-div">
@@ -55,7 +56,7 @@
 									</div>
 								</div>
 							</div>
-							<div style="margin-top: 40px;"> 
+							<div style="margin-top: 40px;">
 								<button class="btn-v btn btn-success" v-on:click.prevent="makePoll">Create Poll</button>
 								<!-- <h1> Selected: {{ selected }} </h1> -->
 								<!-- <button class="btn-r btn btn-info">RESULT</button> -->

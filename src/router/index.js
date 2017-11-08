@@ -52,7 +52,7 @@ export default new Router({
 	},
 	{
 		path: '/about',
-		name: '/about',
+		name: 'about',
 		component: About
 	}
   ]
