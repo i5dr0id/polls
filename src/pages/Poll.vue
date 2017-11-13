@@ -117,6 +117,9 @@ export default {
       this.finds.forEach(function(element) {
         console.log(element.value);
         this.options.push(element.value);
+        this.$router.push({
+          name:'active'
+        });
       }, this);
 
       console.log(
