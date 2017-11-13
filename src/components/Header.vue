@@ -17,7 +17,7 @@
 					<div class="nav navbar-nav navbar-right">
 						<li><a class="nav-link"><router-link to="/">Home</router-link></a></li>
 						<!-- get user id for the active polls and go there -->
-						<li><a href="#livepolls"><router-link :to="{name:'active', params:{id:active.id}}">Live-Polls</router-link></a></li>
+						<li><a href="#livepolls"><router-link to="/active">Live-Polls</router-link></a></li>
 						<li><a><router-link to="/result">Result</router-link></a></li>
 						<li><a href="#">features</a></li>
 						<li><a href="#"><router-link to="/about">About</router-link></a></li>

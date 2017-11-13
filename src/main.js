@@ -11,6 +11,10 @@ import { store } from './store/store'
 
 Vue.use(VeeValidate);
 Vue.use(VueAxios, axios)
+Vue.component('modal', {
+  template: '#modal-template'
+})
+
 
 Vue.config.productionTip = false
 
@@ -21,5 +25,8 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  data: {
+    showModal: false
+  }
 })

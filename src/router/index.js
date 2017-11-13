@@ -35,7 +35,7 @@ export default new Router({
 		component: Result
 	},
 	{
-		path: '/active/:id',
+		path: '/active',
 		name: 'active',
 		component: Active
 	},

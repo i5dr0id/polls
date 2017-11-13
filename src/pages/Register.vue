@@ -100,13 +100,13 @@ export default {
   },
   methods: {
 	  btnRegister() {
-		  console.log('AFTER: ' + JSON.stringify(this.register));
+		 console.log('AFTER: ' + JSON.stringify(this.register));
 		this.axios.post('https://poolap.herokuapp.com/users/', {
-		username: this.register.username,
-		fullname: this.register.fullname,
-		email:	this.register.email,
-		password: this.register.password,
-		phone: this.register.phone
+			username: this.register.username,
+			fullname: this.register.fullname,
+			email:	this.register.email,
+			password: this.register.password,
+			phone: this.register.phone
 	}).then((response) => {
 		let token = response.data.token;
 		var code = response.data.responseCode;

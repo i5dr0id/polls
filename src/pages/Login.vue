@@ -82,6 +82,7 @@ export default {
 		if (token) {
 			localStorage.setItem('token',token);
 			localStorage.setItem('username',response.data.user.username);
+			localStorage.setItem('fullname',response.data.user.fullname);
 			localStorage.setItem('id', response.data.user._id);
 			// console.log('local username', localStorage.getItem('username'));
 			// localStorage.setItem('username', user.username);
